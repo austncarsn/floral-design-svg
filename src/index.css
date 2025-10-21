@@ -758,6 +758,10 @@
     overflow: hidden;
   }
 
+  .rounded {
+    border-radius: .25rem;
+  }
+
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }

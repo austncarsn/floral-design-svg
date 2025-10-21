@@ -32,6 +32,26 @@ import FloralTwentyNine from "./components/floral-design-system/FloralTwentyNine
 import FloralThirty from "./components/floral-design-system/FloralThirty";
 import FloralThirtyOne from "./components/floral-design-system/FloralThirtyOne";
 import FloralThirtyTwo from "./components/floral-design-system/FloralThirtyTwo";
+import FloralThirtyThree from "./components/floral-design-system/FloralThirtyThree";
+import FloralThirtyFour from "./components/floral-design-system/FloralThirtyFour";
+import FloralThirtyFive from "./components/floral-design-system/FloralThirtyFive";
+import FloralThirtySix from "./components/floral-design-system/FloralThirtySix";
+import FloralThirtySeven from "./components/floral-design-system/FloralThirtySeven";
+import FloralThirtyEight from "./components/floral-design-system/FloralThirtyEight";
+import FloralThirtyNine from "./components/floral-design-system/FloralThirtyNine";
+import FloralForty from "./components/floral-design-system/FloralForty";
+import FloralFortyOne from "./components/floral-design-system/FloralFortyOne";
+import FloralFortyTwo from "./components/floral-design-system/FloralFortyTwo";
+import FloralFortyThree from "./components/floral-design-system/FloralFortyThree";
+import FloralFortyFour from "./components/floral-design-system/FloralFortyFour";
+import FloralFortyFive from "./components/floral-design-system/FloralFortyFive";
+import FloralFortySix from "./components/floral-design-system/FloralFortySix";
+import FloralFortySeven from "./components/floral-design-system/FloralFortySeven";
+import FloralFortyEight from "./components/floral-design-system/FloralFortyEight";
+import FloralFortyNine from "./components/floral-design-system/FloralFortyNine";
+import FloralFifty from "./components/floral-design-system/FloralFifty";
+import FloralFiftyOne from "./components/floral-design-system/FloralFiftyOne";
+import FloralFiftyTwo from "./components/floral-design-system/FloralFiftyTwo";
 import StemOne from "./components/floral-design-system/StemOne";
 import StemTwo from "./components/floral-design-system/StemTwo";
 import StemThree from "./components/floral-design-system/StemThree";
@@ -44,6 +64,26 @@ import StemNine from "./components/floral-design-system/StemNine";
 import StemTen from "./components/floral-design-system/StemTen";
 import StemEleven from "./components/floral-design-system/StemEleven";
 import StemTwelve from "./components/floral-design-system/StemTwelve";
+import StemThirteen from "./components/floral-design-system/StemThirteen";
+import StemFourteen from "./components/floral-design-system/StemFourteen";
+import StemFifteen from "./components/floral-design-system/StemFifteen";
+import StemSixteen from "./components/floral-design-system/StemSixteen";
+import StemSeventeen from "./components/floral-design-system/StemSeventeen";
+import StemEighteen from "./components/floral-design-system/StemEighteen";
+import StemNineteen from "./components/floral-design-system/StemNineteen";
+import StemTwenty from "./components/floral-design-system/StemTwenty";
+import StemTwentyOne from "./components/floral-design-system/StemTwentyOne";
+import StemTwentyTwo from "./components/floral-design-system/StemTwentyTwo";
+import StemTwentyThree from "./components/floral-design-system/StemTwentyThree";
+import StemTwentyFour from "./components/floral-design-system/StemTwentyFour";
+import StemTwentyFive from "./components/floral-design-system/StemTwentyFive";
+import StemTwentySix from "./components/floral-design-system/StemTwentySix";
+import StemTwentySeven from "./components/floral-design-system/StemTwentySeven";
+import StemTwentyEight from "./components/floral-design-system/StemTwentyEight";
+import StemTwentyNine from "./components/floral-design-system/StemTwentyNine";
+import StemThirty from "./components/floral-design-system/StemThirty";
+import StemThirtyOne from "./components/floral-design-system/StemThirtyOne";
+import StemThirtyTwo from "./components/floral-design-system/StemThirtyTwo";
 import TileImageCard from "./components/floral-design-system/TileImageCard";
 import VectorCard from "./components/floral-design-system/VectorCard";
 import { floralColors } from "./components/floral-design-system/colors";
@@ -92,6 +132,26 @@ const allDesigns: DesignItem[] = [
   { Component: FloralThirty, name: "FloralThirty", desc: "Terracotta layered circles", colors: ["#C9604A", "#B8A9C9", "#F5EFE0"], category: "floral" },
   { Component: FloralThirtyOne, name: "FloralThirtyOne", desc: "Teal & gold bold daisy", colors: ["#2F5B6B", "#F2A818", "#1A1A1A"], category: "floral" },
   { Component: FloralThirtyTwo, name: "FloralThirtyTwo", desc: "Rainbow celebration", colors: ["#E64A2E", "#4A7C8C", "#F2A818", "#9CAF88", "#B8A9C9", "#C9858D", "#D4A62A", "#F08080", "#7A8450", "#D47647"], category: "floral" },
+  { Component: FloralThirtyThree, name: "FloralThirtyThree", desc: "Geometric starburst", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtyFour, name: "FloralThirtyFour", desc: "Abstract leaf pattern", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtyFive, name: "FloralThirtyFive", desc: "Layered floral design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtySix, name: "FloralThirtySix", desc: "Geometric sunburst", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtySeven, name: "FloralThirtySeven", desc: "Abstract floral pattern", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtyEight, name: "FloralThirtyEight", desc: "Geometric leaf pattern", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralThirtyNine, name: "FloralThirtyNine", desc: "Abstract sunburst", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralForty, name: "FloralForty", desc: "Geometric floral design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyOne, name: "FloralFortyOne", desc: "Abstract leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyTwo, name: "FloralFortyTwo", desc: "Geometric leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyThree, name: "FloralFortyThree", desc: "Abstract floral design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyFour, name: "FloralFortyFour", desc: "Geometric sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyFive, name: "FloralFortyFive", desc: "Abstract sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortySix, name: "FloralFortySix", desc: "Geometric leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortySeven, name: "FloralFortySeven", desc: "Abstract leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyEight, name: "FloralFortyEight", desc: "Geometric sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFortyNine, name: "FloralFortyNine", desc: "Abstract sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFifty, name: "FloralFifty", desc: "Geometric leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFiftyOne, name: "FloralFiftyOne", desc: "Abstract leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFiftyTwo, name: "FloralFiftyTwo", desc: "Geometric sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
   
   // Stems
   { Component: StemOne, name: "StemOne", desc: "Simple two-leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
@@ -106,6 +166,26 @@ const allDesigns: DesignItem[] = [
   { Component: StemTen, name: "StemTen", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemEleven, name: "StemEleven", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemTwelve, name: "StemTwelve", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirteen, name: "StemThirteen", desc: "Curved leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemFourteen, name: "StemFourteen", desc: "Branching stem with leaves", colors: ["#7A8450", "#9CAF88", "#E64A2E"], category: "stem" },
+  { Component: StemFifteen, name: "StemFifteen", desc: "Tall leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemSixteen, name: "StemSixteen", desc: "Single large leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemSeventeen, name: "StemSeventeen", desc: "Heart-shaped leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemEighteen, name: "StemEighteen", desc: "Double curved stems", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemNineteen, name: "StemNineteen", desc: "Fern-like multi-leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwenty, name: "StemTwenty", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyOne, name: "StemTwentyOne", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyTwo, name: "StemTwentyTwo", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyThree, name: "StemTwentyThree", desc: "Curved leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyFour, name: "StemTwentyFour", desc: "Branching stem with leaves", colors: ["#7A8450", "#9CAF88", "#E64A2E"], category: "stem" },
+  { Component: StemTwentyFive, name: "StemTwentyFive", desc: "Tall leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentySix, name: "StemTwentySix", desc: "Single large leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentySeven, name: "StemTwentySeven", desc: "Heart-shaped leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyEight, name: "StemTwentyEight", desc: "Double curved stems", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemTwentyNine, name: "StemTwentyNine", desc: "Fern-like multi-leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirty, name: "StemThirty", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtyOne, name: "StemThirtyOne", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtyTwo, name: "StemThirtyTwo", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
 ];
 
 export default function App() {
@@ -494,7 +574,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <span className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
-                44 Components
+                84 Components
               </span>
               <span className="flex items-center gap-2">
                 <Palette className="w-4 h-4" />
