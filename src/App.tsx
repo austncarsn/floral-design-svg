@@ -173,15 +173,6 @@ export default function App() {
                 Vectors
               </button>
               <button
-                onClick={() => setActiveSection("variations")}
-                className={`capsule-btn capsule-btn-lavender ${
-                  activeSection === "variations" ? "capsule-btn-active" : ""
-                }`}
-              >
-                <Palette className="inline-block w-4 h-4 mr-2" />
-                Variations
-              </button>
-              <button
                 onClick={() => setActiveSection("palette")}
                 className={`capsule-btn capsule-btn-cream ${
                   activeSection === "palette" ? "capsule-btn-active" : ""
@@ -225,15 +216,6 @@ export default function App() {
               >
                 <Download className="inline-block w-5 h-5 mr-3" />
                 Vectors
-              </button>
-              <button
-                onClick={() => handleSectionChange("variations")}
-                className={`capsule-btn-mobile ${
-                  activeSection === "variations" ? "capsule-btn-mobile-active" : ""
-                }`}
-              >
-                <Palette className="inline-block w-5 h-5 mr-3" />
-                Color Variations
               </button>
               <button
                 onClick={() => handleSectionChange("palette")}
@@ -386,85 +368,6 @@ export default function App() {
             </div>
           )}
 
-          {/* Variations Section */}
-          {activeSection === "variations" && (
-            <div className="space-y-20">
-              <div className="text-center max-w-2xl mx-auto mb-16">
-                <h2 
-                  className="text-balance mb-6"
-                  style={{
-                    fontSize: 'var(--text-3xl)',
-                    lineHeight: 'var(--leading-snug)',
-                    letterSpacing: 'var(--tracking-tight)',
-                    fontWeight: '700'
-                  }}
-                >
-                  Color Variations
-                </h2>
-                <p 
-                  className="text-pretty measure mx-auto"
-                  style={{
-                    fontSize: 'var(--text-lg)',
-                    lineHeight: 'var(--leading-relaxed)',
-                    color: 'rgb(107 114 128)',
-                    fontWeight: '400'
-                  }}
-                >
-                  All stems support custom color palettes for endless design possibilities
-                </p>
-              </div>
-
-              {/* Featured Variations */}
-              {[
-                { stem: StemOne, name: "StemOne", title: "Simple Two-Leaf" },
-                { stem: StemFour, name: "StemFour", title: "Branching Stems" },
-                { stem: StemSix, name: "StemSix", title: "Large Leaf" },
-                { stem: StemNine, name: "StemNine", title: "Fern-Like" }
-              ].map(({ stem: Stem, name, title }) => (
-                <div key={name} className="space-y-8">
-                  <h3 className="text-xl text-gray-900">{title}</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-                    {[
-                      { stem: floralColors.oliveGreen, leaf: floralColors.sageGreen, label: "Forest" },
-                      { stem: floralColors.deepTeal, leaf: floralColors.mintGreen, label: "Ocean" },
-                      { stem: floralColors.terracotta, leaf: floralColors.burntOrange, label: "Autumn" },
-                      { stem: floralColors.charcoal, leaf: floralColors.dustyRose, label: "Vintage" },
-                      { stem: floralColors.mustardGold, leaf: floralColors.goldenYellow, label: "Golden" }
-                    ].map((colors, i) => (
-                      <div key={i} className="aspect-square bg-gray-50 rounded-2xl p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow">
-                        <Stem size={140} stemColor={colors.stem} leafColor={colors.leaf} budColor={name === "StemFour" ? floralColors.coralRed : undefined} />
-                        <p className="text-xs text-gray-500 mt-4">{colors.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {/* All Stems Themes */}
-              <div className="space-y-16 pt-8">
-                {[
-                  { theme: "Forest", stem: floralColors.oliveGreen, leaf: floralColors.sageGreen },
-                  { theme: "Ocean", stem: floralColors.deepTeal, leaf: floralColors.tealBlue },
-                  { theme: "Autumn", stem: floralColors.terracotta, leaf: floralColors.burntOrange }
-                ].map(({ theme, stem, leaf }) => (
-                  <div key={theme} className="space-y-8">
-                    <div className="flex items-center gap-4">
-                      <h3 className="text-xl text-gray-900">{theme} Collection</h3>
-                      <div className="h-px flex-1 bg-gray-200" />
-                    </div>
-                    <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4">
-                      {[StemOne, StemTwo, StemThree, StemFour, StemFive, StemSix, StemSeven, StemEight, StemNine, StemTen, StemEleven, StemTwelve].map((Stem, i) => (
-                        <div key={i} className="aspect-square bg-gray-50 rounded-xl p-3 hover:shadow-lg transition-shadow">
-                          <Stem size={80} stemColor={stem} leafColor={leaf} budColor={i === 3 ? floralColors.coralRed : undefined} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Palette Section */}
           {activeSection === "palette" && (
             <div className="space-y-16">
@@ -581,7 +484,12 @@ export default function App() {
       <footer className="border-t border-gray-100 py-8 sm:py-12">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-            <p>Floral Design System · 2025</p>
+            <p className="lowercase" style={{ 
+              fontWeight: 300,
+              letterSpacing: '0.02em'
+            }}>
+              created by austin carson
+            </p>
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <span className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
