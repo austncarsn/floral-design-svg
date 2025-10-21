@@ -91,10 +91,48 @@ export async function copySVGCode(svgElement: SVGElement): Promise<void> {
   const serializer = new XMLSerializer();
   const svgString = serializer.serializeToString(svgElement);
   
+  // Try modern Clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(svgString);
+      return;
+    } catch (err) {
+      console.warn('Clipboard API failed, using fallback method:', err);
+      // Fall through to fallback method
+    }
+  }
+  
+  // Fallback method using execCommand (works in more restricted environments)
   try {
-    await navigator.clipboard.writeText(svgString);
-  } catch (err) {
-    console.error('Failed to copy SVG code:', err);
-    throw err;
+    const textArea = document.createElement('textarea');
+    textArea.value = svgString;
+    
+    // Make the textarea invisible but accessible
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    textArea.style.opacity = '0';
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    // Try to copy using execCommand
+    const successful = document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    if (!successful) {
+      throw new Error('execCommand copy failed');
+    }
+  } catch (fallbackErr) {
+    console.error('Failed to copy SVG code:', fallbackErr);
+    throw new Error('Unable to copy to clipboard. Please check your browser permissions.');
   }
 }

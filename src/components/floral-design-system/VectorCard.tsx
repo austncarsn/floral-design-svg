@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Download, Copy, Check } from "lucide-react";
+import { Download, Copy, Check, AlertCircle } from "lucide-react";
 import { downloadSVG, copySVGCode } from "../../utils/downloadSVG";
 
 interface VectorCardProps {
@@ -12,6 +12,7 @@ interface VectorCardProps {
 export default function VectorCard({ Component, name, desc, size = 140 }: VectorCardProps) {
   const svgRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
 
   const handleDownloadSVG = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -42,11 +43,14 @@ export default function VectorCard({ Component, name, desc, size = 140 }: Vector
     if (!svgElement) return;
 
     try {
+      setCopyError(false);
       await copySVGCode(svgElement);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
       console.error('Copy failed:', error);
+      setCopyError(true);
+      setTimeout(() => setCopyError(false), 3000);
     }
   };
 
@@ -76,7 +80,9 @@ export default function VectorCard({ Component, name, desc, size = 140 }: Vector
           aria-label="Copy SVG code"
           title="Copy SVG code"
         >
-          {copied ? (
+          {copyError ? (
+            <AlertCircle className="w-4 h-4 text-red-600" />
+          ) : copied ? (
             <Check className="w-4 h-4 text-green-600" />
           ) : (
             <Copy className="w-4 h-4 text-gray-700" />

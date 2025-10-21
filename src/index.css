@@ -63,6 +63,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-600: oklch(.577 .245 27.325);
     --color-green-600: oklch(.627 .194 149.214);
     --color-gray-50: oklch(.985 .002 247.839);
     --color-gray-100: oklch(.967 .003 264.542);
@@ -460,6 +461,10 @@
 @layer utilities {
   .pointer-events-none {
     pointer-events: none;
+  }
+
+  .invisible {
+    visibility: hidden;
   }
 
   .visible {
@@ -1059,6 +1064,10 @@
 
   .text-green-600 {
     color: var(--color-green-600);
+  }
+
+  .text-red-600 {
+    color: var(--color-red-600);
   }
 
   .text-white {
