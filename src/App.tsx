@@ -484,9 +484,10 @@ export default function App() {
       <footer className="border-t border-gray-100 py-8 sm:py-12">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-            <p className="lowercase" style={{ 
-              fontWeight: 300,
-              letterSpacing: '0.02em'
+            <p style={{ 
+              fontWeight: 600,
+              letterSpacing: '0.02em',
+              textTransform: 'capitalize'
             }}>
               created by austin carson
             </p>
