@@ -4,11 +4,11 @@ An elegant digital collection of **44 geometric floral SVGs**, crafted as a cohe
 
 ## Features
 
-- 🌸 **44 Geometric Designs** — a curated set of modular floral and stem components  
-- 🖼️ **Gallery View** — browse all designs in a clean, responsive interface  
-- 🎨 **Color Variations** — explore tonal palettes and visual treatments  
-- ⬇️ **Vector Downloads** — instantly export SVGs for your creative workflow  
-- 💎 **Refined Aesthetic** — minimal gradients, soft contrast, and timeless composition  
+- **44 Geometric Designs** — a curated set of modular floral and stem components  
+- **Gallery View** — browse all designs in a clean, responsive interface  
+- **Color Variations** — explore tonal palettes and visual treatments  
+- **Vector Downloads** — instantly export SVGs for your creative workflow  
+- **Refined Aesthetic** — minimal gradients, soft contrast, and timeless composition  
 
 ## Technology
 
