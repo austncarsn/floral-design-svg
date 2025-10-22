@@ -79,9 +79,15 @@
   --measure-wide: 75ch;
   
   /* Spacing Tokens */
-  --space-hero-y: clamp(5rem, 10vw, 10rem);
+  --space-hero-y: clamp(6rem, 12vw, 12rem);
   --space-section: clamp(4rem, 8vw, 8rem);
   --space-card-gap: clamp(1.25rem, 2.5vw, 2rem);
+  
+  /* Elegant Text Effects */
+  --text-shadow-elegant: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12);
+  --text-shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.16);
+  --gradient-dark-text: linear-gradient(135deg, #0A0A0A 0%, #2D2D2D 50%, #0A0A0A 100%);
+  --gradient-charcoal-text: linear-gradient(180deg, #1A1A1A 0%, #404040 100%);
   
   /* Color Tokens (for shadcn compatibility) */
   --background: #FFFFFF;
@@ -764,4 +770,24 @@ html {
 .capsule-btn-mobile-active:hover {
   transform: translateX(2px);
   background: linear-gradient(135deg, #3D3A37 0%, #2D2A27 100%);
+}
+
+/* Scalloped Bottom Edge */
+.scalloped-bottom {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.scalloped-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background-image: 
+    radial-gradient(circle at 20px 0px, transparent 20px, var(--gradient-warm-start) 20px);
+  background-size: 40px 24px;
+  background-repeat: repeat-x;
+  background-position: 0 0;
 }

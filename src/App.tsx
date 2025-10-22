@@ -256,7 +256,7 @@ export default function App() {
     <div className="min-h-screen">
       {/* Luxury Header with Scroll Detection */}
       <header className={`luxury-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 py-4 sm:py-6">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 py-4 sm:py-6 scalloped-bottom">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="luxury-title">
@@ -344,7 +344,7 @@ export default function App() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-8">
+      <main style={{ paddingTop: 'var(--space-hero-y)', paddingBottom: 'var(--space-section)' }} className="px-4 sm:px-8">
         <div className="max-w-[1600px] mx-auto">
           
           {/* Gallery Section */}
@@ -352,10 +352,33 @@ export default function App() {
             <div className="space-y-12">
               {/* Section Header */}
               <div className="text-center max-w-2xl mx-auto">
-                <h2 className="heading-xl text-balance mb-6">
+                <h2 
+                  className="text-balance mb-6"
+                  style={{
+                    fontSize: 'var(--text-3xl)',
+                    lineHeight: 'var(--leading-snug)',
+                    letterSpacing: 'var(--tracking-tight)',
+                    fontWeight: '700',
+                    background: 'var(--gradient-dark-text)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textShadow: 'var(--text-shadow-elegant)',
+                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
+                  }}
+                >
                   PNG Downloads
                 </h2>
-                <p className="body-text text-pretty measure mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                <p 
+                  className="text-pretty measure mx-auto" 
+                  style={{ 
+                    color: 'var(--text-secondary)',
+                    fontSize: 'var(--text-lg)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    fontWeight: '500',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
+                  }}
+                >
                   High-resolution PNG files ready for download. Click the download button on any design to save it to your device.
                 </p>
               </div>
@@ -417,10 +440,33 @@ export default function App() {
             <div className="space-y-12">
               {/* Section Header */}
               <div className="text-center max-w-2xl mx-auto">
-                <h2 className="heading-xl text-balance mb-6">
+                <h2 
+                  className="text-balance mb-6"
+                  style={{
+                    fontSize: 'var(--text-3xl)',
+                    lineHeight: 'var(--leading-snug)',
+                    letterSpacing: 'var(--tracking-tight)',
+                    fontWeight: '700',
+                    background: 'var(--gradient-dark-text)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textShadow: 'var(--text-shadow-elegant)',
+                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
+                  }}
+                >
                   Vector Downloads
                 </h2>
-                <p className="body-text text-pretty measure mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                <p 
+                  className="text-pretty measure mx-auto" 
+                  style={{ 
+                    color: 'var(--text-secondary)',
+                    fontSize: 'var(--text-lg)',
+                    lineHeight: 'var(--leading-relaxed)',
+                    fontWeight: '500',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
+                  }}
+                >
                   Download SVG files or copy code directly. All vectors include embedded metadata for easy organization.
                 </p>
               </div>
@@ -500,7 +546,13 @@ export default function App() {
                     fontSize: 'var(--text-3xl)',
                     lineHeight: 'var(--leading-snug)',
                     letterSpacing: 'var(--tracking-tight)',
-                    fontWeight: '700'
+                    fontWeight: '700',
+                    background: 'var(--gradient-dark-text)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textShadow: 'var(--text-shadow-elegant)',
+                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
                   }}
                 >
                   Color Palette
@@ -510,8 +562,9 @@ export default function App() {
                   style={{
                     fontSize: 'var(--text-lg)',
                     lineHeight: 'var(--leading-relaxed)',
-                    color: 'rgb(107 114 128)',
-                    fontWeight: '400'
+                    color: 'var(--text-secondary)',
+                    fontWeight: '500',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.04)'
                   }}
                 >
                   23 carefully curated mid-century modern colors

@@ -954,16 +954,8 @@
     padding-top: calc(var(--spacing) * 4);
   }
 
-  .pt-24 {
-    padding-top: calc(var(--spacing) * 24);
-  }
-
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
-  }
-
-  .pb-16 {
-    padding-bottom: calc(var(--spacing) * 16);
   }
 
   .text-center {
@@ -1095,6 +1087,12 @@
 
   .outline-\[\#C94337\] {
     outline-color: #c94337;
+  }
+
+  .drop-shadow {
+    --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, #0000001a)) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, #0000000f));
+    --tw-drop-shadow: drop-shadow(0 1px 2px #0000001a) drop-shadow(0 1px 1px #0000000f);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
   .filter {
@@ -1306,18 +1304,6 @@
     }
   }
 
-  @media (width >= 40rem) {
-    .sm\:pt-32 {
-      padding-top: calc(var(--spacing) * 32);
-    }
-  }
-
-  @media (width >= 40rem) {
-    .sm\:pb-24 {
-      padding-bottom: calc(var(--spacing) * 24);
-    }
-  }
-
   @media (width >= 48rem) {
     .md\:flex {
       display: flex;
@@ -1414,9 +1400,13 @@
   --measure-narrow: 45ch;
   --measure-base: 65ch;
   --measure-wide: 75ch;
-  --space-hero-y: clamp(5rem, 10vw, 10rem);
+  --space-hero-y: clamp(6rem, 12vw, 12rem);
   --space-section: clamp(4rem, 8vw, 8rem);
   --space-card-gap: clamp(1.25rem, 2.5vw, 2rem);
+  --text-shadow-elegant: 0 2px 8px #00000014, 0 1px 2px #0000001f;
+  --text-shadow-deep: 0 4px 12px #0000001f, 0 2px 4px #00000029;
+  --gradient-dark-text: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 50%, #0a0a0a 100%);
+  --gradient-charcoal-text: linear-gradient(180deg, #1a1a1a 0%, #404040 100%);
   --background: #fff;
   --foreground: oklch(.145 0 0);
   --card: #fffffff2;
@@ -1831,6 +1821,24 @@ html {
 .capsule-btn-mobile-active:hover {
   background: linear-gradient(135deg, #3d3a37 0%, #2d2a27 100%);
   transform: translateX(2px);
+}
+
+.scalloped-bottom {
+  padding-bottom: 2.5rem;
+  position: relative;
+}
+
+.scalloped-bottom:after {
+  content: "";
+  background-image: radial-gradient(circle at 20px 0px, transparent 20px, var(--gradient-warm-start) 20px);
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: 40px 24px;
+  width: 100%;
+  height: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 @property --tw-rotate-x {
