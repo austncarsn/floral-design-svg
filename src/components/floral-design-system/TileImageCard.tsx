@@ -139,6 +139,7 @@ export default function TileImageCard({
       className={`
         tile relative isolate 
         bg-white border border-[#E6E3DE]
+        rounded-2xl overflow-hidden
         transition-shadow duration-200
         hover:bg-[#FBFAF8] hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]
         focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1E2326]
@@ -151,7 +152,7 @@ export default function TileImageCard({
       {/* Preview Figure */}
       <figure className="preview p-3">
         <div 
-          className="aspect-square grid place-items-center bg-[#FCFCFB] border border-[#F0EEEA] relative"
+          className="aspect-square grid place-items-center bg-[#FCFCFB] border border-[#F0EEEA] rounded-xl relative"
           style={{ aspectRatio: '1 / 1' }}
         >
           {/* Hidden SVG for download reference */}

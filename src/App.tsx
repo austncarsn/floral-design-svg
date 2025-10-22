@@ -52,6 +52,14 @@ import FloralFortyNine from "./components/floral-design-system/FloralFortyNine";
 import FloralFifty from "./components/floral-design-system/FloralFifty";
 import FloralFiftyOne from "./components/floral-design-system/FloralFiftyOne";
 import FloralFiftyTwo from "./components/floral-design-system/FloralFiftyTwo";
+import FloralFiftyThree from "./components/floral-design-system/FloralFiftyThree";
+import FloralFiftyFour from "./components/floral-design-system/FloralFiftyFour";
+import FloralFiftyFive from "./components/floral-design-system/FloralFiftyFive";
+import FloralFiftySix from "./components/floral-design-system/FloralFiftySix";
+import FloralFiftySeven from "./components/floral-design-system/FloralFiftySeven";
+import FloralFiftyEight from "./components/floral-design-system/FloralFiftyEight";
+import FloralFiftyNine from "./components/floral-design-system/FloralFiftyNine";
+import FloralSixty from "./components/floral-design-system/FloralSixty";
 import StemOne from "./components/floral-design-system/StemOne";
 import StemTwo from "./components/floral-design-system/StemTwo";
 import StemThree from "./components/floral-design-system/StemThree";
@@ -84,6 +92,14 @@ import StemTwentyNine from "./components/floral-design-system/StemTwentyNine";
 import StemThirty from "./components/floral-design-system/StemThirty";
 import StemThirtyOne from "./components/floral-design-system/StemThirtyOne";
 import StemThirtyTwo from "./components/floral-design-system/StemThirtyTwo";
+import StemThirtyThree from "./components/floral-design-system/StemThirtyThree";
+import StemThirtyFour from "./components/floral-design-system/StemThirtyFour";
+import StemThirtyFive from "./components/floral-design-system/StemThirtyFive";
+import StemThirtySix from "./components/floral-design-system/StemThirtySix";
+import StemThirtySeven from "./components/floral-design-system/StemThirtySeven";
+import StemThirtyEight from "./components/floral-design-system/StemThirtyEight";
+import StemThirtyNine from "./components/floral-design-system/StemThirtyNine";
+import StemForty from "./components/floral-design-system/StemForty";
 import TileImageCard from "./components/floral-design-system/TileImageCard";
 import VectorCard from "./components/floral-design-system/VectorCard";
 import { floralColors } from "./components/floral-design-system/colors";
@@ -152,6 +168,14 @@ const allDesigns: DesignItem[] = [
   { Component: FloralFifty, name: "FloralFifty", desc: "Geometric leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
   { Component: FloralFiftyOne, name: "FloralFiftyOne", desc: "Abstract leaf design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
   { Component: FloralFiftyTwo, name: "FloralFiftyTwo", desc: "Geometric sunburst design", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralFiftyThree, name: "FloralFiftyThree", desc: "Mustard & teal triangular starburst", colors: ["#D4A62A", "#2F5B6B", "#F5EFE0", "#C9604A"], category: "floral" },
+  { Component: FloralFiftyFour, name: "FloralFiftyFour", desc: "Lavender rotated squares", colors: ["#B8A9C9", "#F5EFE0", "#9CAF88", "#E64A2E"], category: "floral" },
+  { Component: FloralFiftyFive, name: "FloralFiftyFive", desc: "Warm gradient 12-petal bloom", colors: ["#F08080", "#D47647", "#F2A818"], category: "floral" },
+  { Component: FloralFiftySix, name: "FloralFiftySix", desc: "Cool tones mandala circles", colors: ["#4A7C8C", "#A8C9B8", "#F5EFE0", "#2F5B6B"], category: "floral" },
+  { Component: FloralFiftySeven, name: "FloralFiftySeven", desc: "Layered hexagon bloom", colors: ["#C9604A", "#F5EFE0", "#7A8450", "#D4A62A"], category: "floral" },
+  { Component: FloralFiftyEight, name: "FloralFiftyEight", desc: "Art deco fan pattern", colors: ["#C9858D", "#B8A9C9", "#FAF7F2", "#E64A2E"], category: "floral" },
+  { Component: FloralFiftyNine, name: "FloralFiftyNine", desc: "Flower-of-life sacred geometry", colors: ["#9CAF88", "#A8C9B8", "#7A8450", "#F2A818"], category: "floral" },
+  { Component: FloralSixty, name: "FloralSixty", desc: "Minimalist four-petal cross", colors: ["#D47647", "#2F5B6B", "#F5EFE0", "#E64A2E"], category: "floral" },
   
   // Stems
   { Component: StemOne, name: "StemOne", desc: "Simple two-leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
@@ -166,14 +190,14 @@ const allDesigns: DesignItem[] = [
   { Component: StemTen, name: "StemTen", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemEleven, name: "StemEleven", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemTwelve, name: "StemTwelve", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemThirteen, name: "StemThirteen", desc: "Curved leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemFourteen, name: "StemFourteen", desc: "Branching stem with leaves", colors: ["#7A8450", "#9CAF88", "#E64A2E"], category: "stem" },
-  { Component: StemFifteen, name: "StemFifteen", desc: "Tall leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemSixteen, name: "StemSixteen", desc: "Single large leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemSeventeen, name: "StemSeventeen", desc: "Heart-shaped leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemEighteen, name: "StemEighteen", desc: "Double curved stems", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemNineteen, name: "StemNineteen", desc: "Fern-like multi-leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
-  { Component: StemTwenty, name: "StemTwenty", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirteen, name: "StemThirteen", desc: "Triple branch with berries", colors: ["#7A8450", "#9CAF88", "#C9604A"], category: "stem" },
+  { Component: StemFourteen, name: "StemFourteen", desc: "Eucalyptus rounded pairs", colors: ["#7A8450", "#A8C9B8"], category: "stem" },
+  { Component: StemFifteen, name: "StemFifteen", desc: "Palm frond radiating leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemSixteen, name: "StemSixteen", desc: "Monstera split leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemSeventeen, name: "StemSeventeen", desc: "Cascading ivy heart leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemEighteen, name: "StemEighteen", desc: "Wheat stalk with grains", colors: ["#7A8450", "#D4A62A"], category: "stem" },
+  { Component: StemNineteen, name: "StemNineteen", desc: "Double helix intertwined", colors: ["#7A8450", "#9CAF88", "#A8C9B8"], category: "stem" },
+  { Component: StemTwenty, name: "StemTwenty", desc: "Tropical bird of paradise", colors: ["#7A8450", "#9CAF88", "#A8C9B8"], category: "stem" },
   { Component: StemTwentyOne, name: "StemTwentyOne", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemTwentyTwo, name: "StemTwentyTwo", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemTwentyThree, name: "StemTwentyThree", desc: "Curved leaf stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
@@ -186,6 +210,14 @@ const allDesigns: DesignItem[] = [
   { Component: StemThirty, name: "StemThirty", desc: "Bamboo segmented", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemThirtyOne, name: "StemThirtyOne", desc: "Willow drooping style", colors: ["#7A8450", "#9CAF88"], category: "stem" },
   { Component: StemThirtyTwo, name: "StemThirtyTwo", desc: "Vine spiral stem", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtyThree, name: "StemThirtyThree", desc: "Triple branch with berries", colors: ["#7A8450", "#9CAF88", "#C9604A"], category: "stem" },
+  { Component: StemThirtyFour, name: "StemThirtyFour", desc: "Eucalyptus rounded pairs", colors: ["#7A8450", "#A8C9B8"], category: "stem" },
+  { Component: StemThirtyFive, name: "StemThirtyFive", desc: "Palm frond radiating leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtySix, name: "StemThirtySix", desc: "Monstera split leaf", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtySeven, name: "StemThirtySeven", desc: "Cascading ivy heart leaves", colors: ["#7A8450", "#9CAF88"], category: "stem" },
+  { Component: StemThirtyEight, name: "StemThirtyEight", desc: "Wheat stalk with grains", colors: ["#7A8450", "#D4A62A"], category: "stem" },
+  { Component: StemThirtyNine, name: "StemThirtyNine", desc: "Double helix intertwined", colors: ["#7A8450", "#9CAF88", "#A8C9B8"], category: "stem" },
+  { Component: StemForty, name: "StemForty", desc: "Tropical bird of paradise", colors: ["#7A8450", "#9CAF88", "#A8C9B8"], category: "stem" },
 ];
 
 export default function App() {
@@ -318,6 +350,16 @@ export default function App() {
           {/* Gallery Section */}
           {activeSection === "gallery" && (
             <div className="space-y-12">
+              {/* Section Header */}
+              <div className="text-center max-w-2xl mx-auto">
+                <h2 className="heading-xl text-balance mb-6">
+                  PNG Downloads
+                </h2>
+                <p className="body-text text-pretty measure mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                  High-resolution PNG files ready for download. Click the download button on any design to save it to your device.
+                </p>
+              </div>
+
               {/* Filter Pills */}
               <div className="flex items-center justify-center gap-3">
                 <button
@@ -429,7 +471,7 @@ export default function App() {
                     </div>
                     
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-white space-y-1">
                         <p className="text-xs opacity-90">{desc}</p>
                         <p className="text-[10px] opacity-70">Click to download SVG or copy code</p>
@@ -574,7 +616,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               <span className="flex items-center gap-2">
                 <Layers className="w-4 h-4" />
-                84 Components
+                100 Components
               </span>
               <span className="flex items-center gap-2">
                 <Palette className="w-4 h-4" />
