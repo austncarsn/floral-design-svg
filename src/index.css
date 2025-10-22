@@ -1642,7 +1642,6 @@ html {
 .luxury-header {
   z-index: 50;
   -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
-  box-shadow: none;
   background: #fff6;
   border-top: 1px solid #fffc;
   border-bottom: none;
@@ -1651,6 +1650,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
+  box-shadow: 0 8px 32px #1f268714, inset 0 1px #ffffffe6, inset 0 -1px #fff6, 0 0 0 1px #ffffff1a, 0 20px 60px -10px #0000000d;
 }
 
 .luxury-header:before {
@@ -1824,14 +1824,14 @@ html {
 }
 
 .scalloped-bottom {
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   position: relative;
 }
 
 .scalloped-bottom:after {
   content: "";
-  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
-  background-image: radial-gradient(circle at 24px 0, #0000 24px, #fff6 24px);
+  opacity: 1;
+  background-image: radial-gradient(circle at 24px 0, #0000 24px, #fff9 24px);
   background-position: 0 0;
   background-repeat: repeat-x;
   background-size: 48px 32px;
