@@ -256,7 +256,7 @@ export default function App() {
     <div className="min-h-screen">
       {/* Luxury Header with Scroll Detection */}
       <header className={`luxury-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 py-4 sm:py-6 scalloped-bottom">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-8 py-4 sm:py-6">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="luxury-title">
