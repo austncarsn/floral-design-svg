@@ -358,13 +358,7 @@ export default function App() {
                     fontSize: 'var(--text-3xl)',
                     lineHeight: 'var(--leading-snug)',
                     letterSpacing: 'var(--tracking-tight)',
-                    fontWeight: '700',
-                    background: 'var(--gradient-dark-text)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: 'var(--text-shadow-elegant)',
-                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
+                    fontWeight: '700'
                   }}
                 >
                   PNG Downloads
@@ -446,13 +440,7 @@ export default function App() {
                     fontSize: 'var(--text-3xl)',
                     lineHeight: 'var(--leading-snug)',
                     letterSpacing: 'var(--tracking-tight)',
-                    fontWeight: '700',
-                    background: 'var(--gradient-dark-text)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: 'var(--text-shadow-elegant)',
-                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
+                    fontWeight: '700'
                   }}
                 >
                   Vector Downloads
@@ -546,13 +534,7 @@ export default function App() {
                     fontSize: 'var(--text-3xl)',
                     lineHeight: 'var(--leading-snug)',
                     letterSpacing: 'var(--tracking-tight)',
-                    fontWeight: '700',
-                    background: 'var(--gradient-dark-text)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    textShadow: 'var(--text-shadow-elegant)',
-                    filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06))'
+                    fontWeight: '700'
                   }}
                 >
                   Color Palette

@@ -1089,12 +1089,6 @@
     outline-color: #c94337;
   }
 
-  .drop-shadow {
-    --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, #0000001a)) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, #0000000f));
-    --tw-drop-shadow: drop-shadow(0 1px 2px #0000001a) drop-shadow(0 1px 1px #0000000f);
-    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
-  }
-
   .filter {
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
@@ -1644,7 +1638,7 @@ html {
   -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
   background: #fff6;
   border-top: 1px solid #fffc;
-  border-bottom: 1px solid #ffffff4d;
+  border-bottom: none;
   transition: all .4s cubic-bezier(.4, 0, .2, 1);
   position: fixed;
   top: 0;
@@ -1702,7 +1696,7 @@ html {
   text-transform: capitalize;
   text-shadow: 0 0 20px #fffc, 0 0 30px #fff5f099, 0 1px 2px #ffffff80;
   font-size: clamp(1.5rem, 2.5vw + .5rem, 2.5rem);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.1;
   transition: all .3s cubic-bezier(.4, 0, .2, 1);
 }
@@ -1830,12 +1824,13 @@ html {
 
 .scalloped-bottom:after {
   content: "";
-  background-image: radial-gradient(circle at 20px 0px, transparent 20px, var(--gradient-warm-start) 20px);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
+  background-image: radial-gradient(circle at 24px 0, #0000 24px, #fff6 24px);
   background-position: 0 0;
   background-repeat: repeat-x;
-  background-size: 40px 24px;
+  background-size: 48px 32px;
   width: 100%;
-  height: 24px;
+  height: 32px;
   position: absolute;
   bottom: 0;
   left: 0;

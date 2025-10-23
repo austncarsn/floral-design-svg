@@ -574,7 +574,7 @@ html {
 
   /* Glass refraction edge lighting */
   border-top: 1px solid rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
 
   /* Multi-layer glass shadow for depth */
   box-shadow:
@@ -651,7 +651,7 @@ html {
 .luxury-title {
   font-family: var(--font-sans);
   font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.5rem);
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.1;
   color: #1a1614;
@@ -839,13 +839,15 @@ html {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 24px;
+  height: 32px;
   background-image: radial-gradient(
-    circle at 20px 0px,
-    transparent 20px,
-    var(--gradient-warm-start) 20px
+    circle at 24px 0px,
+    transparent 24px,
+    rgba(255, 255, 255, 0.4) 24px
   );
-  background-size: 40px 24px;
+  background-size: 48px 32px;
   background-repeat: repeat-x;
   background-position: 0 0;
+  backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
+  -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(1.1);
 }
