@@ -100,11 +100,67 @@ import StemThirtySeven from "./components/floral-design-system/StemThirtySeven";
 import StemThirtyEight from "./components/floral-design-system/StemThirtyEight";
 import StemThirtyNine from "./components/floral-design-system/StemThirtyNine";
 import StemForty from "./components/floral-design-system/StemForty";
+import ElectricFloralOne from "./components/floral-design-system/ElectricFloralOne";
+import ElectricFloralTwo from "./components/floral-design-system/ElectricFloralTwo";
+import ElectricFloralThree from "./components/floral-design-system/ElectricFloralThree";
+import ElectricFloralFour from "./components/floral-design-system/ElectricFloralFour";
+import ElectricFloralFive from "./components/floral-design-system/ElectricFloralFive";
+import ElectricFloralSix from "./components/floral-design-system/ElectricFloralSix";
+import ElectricFloralSeven from "./components/floral-design-system/ElectricFloralSeven";
+import ElectricFloralEight from "./components/floral-design-system/ElectricFloralEight";
+import ElectricFloralNine from "./components/floral-design-system/ElectricFloralNine";
+import ElectricFloralTen from "./components/floral-design-system/ElectricFloralTen";
+import ElectricStemOne from "./components/floral-design-system/ElectricStemOne";
+import ElectricStemTwo from "./components/floral-design-system/ElectricStemTwo";
+import ElectricStemThree from "./components/floral-design-system/ElectricStemThree";
+import ElectricStemFour from "./components/floral-design-system/ElectricStemFour";
+import ElectricStemFive from "./components/floral-design-system/ElectricStemFive";
+import ElectricFloralEleven from "./components/floral-design-system/ElectricFloralEleven";
+import ElectricFloralTwelve from "./components/floral-design-system/ElectricFloralTwelve";
+import ElectricFloralThirteen from "./components/floral-design-system/ElectricFloralThirteen";
+import ElectricFloralFourteen from "./components/floral-design-system/ElectricFloralFourteen";
+import ElectricFloralFifteen from "./components/floral-design-system/ElectricFloralFifteen";
+import ElectricFloralSixteen from "./components/floral-design-system/ElectricFloralSixteen";
+import ElectricFloralSeventeen from "./components/floral-design-system/ElectricFloralSeventeen";
+import ElectricFloralEighteen from "./components/floral-design-system/ElectricFloralEighteen";
+import ElectricFloralNineteen from "./components/floral-design-system/ElectricFloralNineteen";
+import ElectricFloralTwenty from "./components/floral-design-system/ElectricFloralTwenty";
+import ElectricFloralTwentyOne from "./components/floral-design-system/ElectricFloralTwentyOne";
+import ElectricFloralTwentyTwo from "./components/floral-design-system/ElectricFloralTwentyTwo";
+import ElectricFloralTwentyThree from "./components/floral-design-system/ElectricFloralTwentyThree";
+import ElectricFloralTwentyFour from "./components/floral-design-system/ElectricFloralTwentyFour";
+import ElectricFloralTwentyFive from "./components/floral-design-system/ElectricFloralTwentyFive";
+import ElectricStemSix from "./components/floral-design-system/ElectricStemSix";
+import ElectricStemSeven from "./components/floral-design-system/ElectricStemSeven";
+import ElectricStemEight from "./components/floral-design-system/ElectricStemEight";
+import ElectricStemNine from "./components/floral-design-system/ElectricStemNine";
+import ElectricStemTen from "./components/floral-design-system/ElectricStemTen";
+import ElectricStemEleven from "./components/floral-design-system/ElectricStemEleven";
+import ElectricStemTwelve from "./components/floral-design-system/ElectricStemTwelve";
+import ElectricStemThirteen from "./components/floral-design-system/ElectricStemThirteen";
+import ElectricStemFourteen from "./components/floral-design-system/ElectricStemFourteen";
+import ElectricStemFifteen from "./components/floral-design-system/ElectricStemFifteen";
+import ElectricFloralTwentySix from "./components/floral-design-system/ElectricFloralTwentySix";
+import ElectricFloralTwentySeven from "./components/floral-design-system/ElectricFloralTwentySeven";
+import ElectricFloralTwentyEight from "./components/floral-design-system/ElectricFloralTwentyEight";
+import ElectricFloralTwentyNine from "./components/floral-design-system/ElectricFloralTwentyNine";
+import ElectricFloralThirty from "./components/floral-design-system/ElectricFloralThirty";
+import ElectricFloralThirtyOne from "./components/floral-design-system/ElectricFloralThirtyOne";
+import ElectricFloralThirtyTwo from "./components/floral-design-system/ElectricFloralThirtyTwo";
+import ElectricFloralThirtyThree from "./components/floral-design-system/ElectricFloralThirtyThree";
+import ElectricFloralThirtyFour from "./components/floral-design-system/ElectricFloralThirtyFour";
+import ElectricFloralThirtyFive from "./components/floral-design-system/ElectricFloralThirtyFive";
+import ElectricFloralThirtySix from "./components/floral-design-system/ElectricFloralThirtySix";
+import ElectricFloralThirtySeven from "./components/floral-design-system/ElectricFloralThirtySeven";
+import ElectricFloralThirtyEight from "./components/floral-design-system/ElectricFloralThirtyEight";
+import ElectricFloralThirtyNine from "./components/floral-design-system/ElectricFloralThirtyNine";
+import ElectricFloralForty from "./components/floral-design-system/ElectricFloralForty";
 import TileImageCard from "./components/floral-design-system/TileImageCard";
 import VectorCard from "./components/floral-design-system/VectorCard";
 import { floralColors } from "./components/floral-design-system/colors";
 
 type Category = "all" | "florals" | "stems";
+type Edition = "all" | "october2025" | "electric";
 
 interface DesignItem {
   Component: React.ComponentType<{ size?: number; className?: string }>;
@@ -112,10 +168,11 @@ interface DesignItem {
   desc: string;
   colors: string[];
   category: "floral" | "stem";
+  edition: "october2025" | "electric";
 }
 
-const allDesigns: DesignItem[] = [
-  // Florals
+const allDesignsBase: Omit<DesignItem, "edition">[] = [
+  // Florals - October 2025 Edition
   { Component: FloralOne, name: "FloralOne", desc: "Coral red 6-petal daisy", colors: ["#E64A2E", "#1A1A1A"], category: "floral" },
   { Component: FloralTwo, name: "FloralTwo", desc: "Teal blue 8-petal sunburst", colors: ["#4A7C8C", "#F5EFE0"], category: "floral" },
   { Component: FloralThree, name: "FloralThree", desc: "Black & coral layered", colors: ["#1A1A1A", "#E64A2E", "#F5EFE0"], category: "floral" },
@@ -220,21 +277,97 @@ const allDesigns: DesignItem[] = [
   { Component: StemForty, name: "StemForty", desc: "Tropical bird of paradise", colors: ["#7A8450", "#9CAF88", "#A8C9B8"], category: "stem" },
 ];
 
+// Retro Florals designs (1930s Art Deco)
+const electricDesigns: Omit<DesignItem, "edition">[] = [
+  // Retro Florals - Art Deco Elegance
+  { Component: ElectricFloralOne, name: "ElectricFloralOne", desc: "Art Deco sunburst with dusty gold rays", colors: ["#D4A574", "#7A9299", "#8FA396", "#1A1614"], category: "floral" },
+  { Component: ElectricFloralTwo, name: "ElectricFloralTwo", desc: "Hexagonal geometric bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "floral" },
+  { Component: ElectricFloralThree, name: "ElectricFloralThree", desc: "Triangular Art Deco petals", colors: ["#D4A574", "#7A9299", "#8FA396", "#E8DCC8"], category: "floral" },
+  { Component: ElectricFloralFour, name: "ElectricFloralFour", desc: "Geometric grid mandala", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "floral" },
+  { Component: ElectricFloralFive, name: "ElectricFloralFive", desc: "Concentric ring bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralSix, name: "ElectricFloralSix", desc: "Art Deco circuit flower", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralSeven, name: "ElectricFloralSeven", desc: "Triangular layered bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralEight, name: "ElectricFloralEight", desc: "Stepped pyramid rings", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralNine, name: "ElectricFloralNine", desc: "Pixelated geometric flower", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralTen, name: "ElectricFloralTen", desc: "Radiating star burst", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralEleven, name: "ElectricFloralEleven", desc: "Pentagonal star bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralTwelve, name: "ElectricFloralTwelve", desc: "Octagonal layered mandala", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralThirteen, name: "ElectricFloralThirteen", desc: "Spiral Art Deco bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralFourteen, name: "ElectricFloralFourteen", desc: "Geometric mandala layers", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralFifteen, name: "ElectricFloralFifteen", desc: "Cascading vertical pattern", colors: ["#D4A574", "#7A9299", "#8FA396"], category: "floral" },
+  { Component: ElectricFloralSixteen, name: "ElectricFloralSixteen", desc: "Interlocking circular motif", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "floral" },
+  { Component: ElectricFloralSeventeen, name: "ElectricFloralSeventeen", desc: "Chevron wave pattern", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralEighteen, name: "ElectricFloralEighteen", desc: "Flower of life sacred geometry", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralNineteen, name: "ElectricFloralNineteen", desc: "Fractal crystalline triangles", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralTwenty, name: "ElectricFloralTwenty", desc: "Radial beam projector", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralTwentyOne, name: "ElectricFloralTwentyOne", desc: "Interconnected node pattern", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralTwentyTwo, name: "ElectricFloralTwentyTwo", desc: "Radar sweep pattern", colors: ["#D4A574", "#7A9299", "#8FA396"], category: "floral" },
+  { Component: ElectricFloralTwentyThree, name: "ElectricFloralTwentyThree", desc: "Vortex energy bloom", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "floral" },
+  { Component: ElectricFloralTwentyFour, name: "ElectricFloralTwentyFour", desc: "Cubic projection", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralTwentyFive, name: "ElectricFloralTwentyFive", desc: "Orbital bloom rings", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "floral" },
+  { Component: ElectricFloralTwentySix, name: "ElectricFloralTwentySix", desc: "Monochrome dusty gold starburst", colors: ["#D4A574"], category: "floral" },
+  { Component: ElectricFloralTwentySeven, name: "ElectricFloralTwentySeven", desc: "Monochrome dusty teal geometric web", colors: ["#7A9299"], category: "floral" },
+  { Component: ElectricFloralTwentyEight, name: "ElectricFloralTwentyEight", desc: "Monochrome sage green square grid", colors: ["#8FA396"], category: "floral" },
+  { Component: ElectricFloralTwentyNine, name: "ElectricFloralTwentyNine", desc: "Monochrome light gold concentric bloom", colors: ["#C4A582"], category: "floral" },
+  { Component: ElectricFloralThirty, name: "ElectricFloralThirty", desc: "Monochrome dusty mauve radiating star", colors: ["#A89080"], category: "floral" },
+  { Component: ElectricFloralThirtyOne, name: "ElectricFloralThirtyOne", desc: "Monochrome wheat circular mandala", colors: ["#B39C87"], category: "floral" },
+  { Component: ElectricFloralThirtyTwo, name: "ElectricFloralThirtyTwo", desc: "Monochrome warm grey diamond lattice", colors: ["#9B8B7E"], category: "floral" },
+  { Component: ElectricFloralThirtyThree, name: "ElectricFloralThirtyThree", desc: "Monochrome warm brown sunburst", colors: ["#8B7355"], category: "floral" },
+  { Component: ElectricFloralThirtyFour, name: "ElectricFloralThirtyFour", desc: "Monochrome warm beige layered flower", colors: ["#C9A690"], category: "floral" },
+  { Component: ElectricFloralThirtyFive, name: "ElectricFloralThirtyFive", desc: "Monochrome dusty gold pentagon star", colors: ["#D4A574"], category: "floral" },
+  { Component: ElectricFloralThirtySix, name: "ElectricFloralThirtySix", desc: "Monochrome dusty teal layered hexagons", colors: ["#7A9299"], category: "floral" },
+  { Component: ElectricFloralThirtySeven, name: "ElectricFloralThirtySeven", desc: "Monochrome sage green spiral galaxy", colors: ["#8FA396"], category: "floral" },
+  { Component: ElectricFloralThirtyEight, name: "ElectricFloralThirtyEight", desc: "Monochrome light gold Art Deco fan", colors: ["#C4A582"], category: "floral" },
+  { Component: ElectricFloralThirtyNine, name: "ElectricFloralThirtyNine", desc: "Monochrome dusty mauve concentric squares", colors: ["#A89080"], category: "floral" },
+  { Component: ElectricFloralForty, name: "ElectricFloralForty", desc: "Monochrome wheat kaleidoscope", colors: ["#B39C87"], category: "floral" },
+  
+  { Component: ElectricStemOne, name: "ElectricStemOne", desc: "Botanical wire stem with Art Deco nodes", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "stem" },
+  { Component: ElectricStemTwo, name: "ElectricStemTwo", desc: "Zigzag geometric stem", colors: ["#C4A582", "#D4A574", "#7A9299", "#8FA396"], category: "stem" },
+  { Component: ElectricStemThree, name: "ElectricStemThree", desc: "Branching stem with elegant leaves", colors: ["#D4A574", "#7A9299", "#8FA396"], category: "stem" },
+  { Component: ElectricStemFour, name: "ElectricStemFour", desc: "Triple stem with graduated blooms", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "stem" },
+  { Component: ElectricStemFive, name: "ElectricStemFive", desc: "Curved S-stem with ornamental nodes", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "stem" },
+  { Component: ElectricStemSix, name: "ElectricStemSix", desc: "Zigzag stem with alternating blooms", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "stem" },
+  { Component: ElectricStemSeven, name: "ElectricStemSeven", desc: "Willow branch with cascading leaves", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "stem" },
+  { Component: ElectricStemEight, name: "ElectricStemEight", desc: "Botanical specimen with symmetrical leaves", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "stem" },
+  { Component: ElectricStemNine, name: "ElectricStemNine", desc: "Wheat stalk with geometric grains", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "stem" },
+  { Component: ElectricStemTen, name: "ElectricStemTen", desc: "Bamboo-inspired segmented stem", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "stem" },
+  { Component: ElectricStemEleven, name: "ElectricStemEleven", desc: "Fern frond with geometric pinnae", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582"], category: "stem" },
+  { Component: ElectricStemTwelve, name: "ElectricStemTwelve", desc: "Ivy vine with climbing tendrils", colors: ["#D4A574", "#7A9299", "#8FA396"], category: "stem" },
+  { Component: ElectricStemThirteen, name: "ElectricStemThirteen", desc: "Cattail bulrush stems", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "stem" },
+  { Component: ElectricStemFourteen, name: "ElectricStemFourteen", desc: "Thistle with spiky Art Deco crown", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080"], category: "stem" },
+  { Component: ElectricStemFifteen, name: "ElectricStemFifteen", desc: "Lotus stem rising from water", colors: ["#D4A574", "#7A9299", "#8FA396", "#C4A582", "#A89080", "#B39C87"], category: "stem" },
+];
+
+// Combine all designs with their editions
+const allDesigns: DesignItem[] = [
+  ...allDesignsBase.map(design => ({ ...design, edition: "october2025" as const })),
+  ...electricDesigns.map(design => ({ ...design, edition: "electric" as const })),
+];
+
 export default function App() {
   const [categoryFilter, setCategoryFilter] = useState<Category>("all");
+  const [editionFilter, setEditionFilter] = useState<Edition>("all");
   const [activeSection, setActiveSection] = useState<string>("gallery");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const filteredDesigns = allDesigns.filter(design => {
-    if (categoryFilter === "all") return true;
-    if (categoryFilter === "florals") return design.category === "floral";
-    if (categoryFilter === "stems") return design.category === "stem";
-    return true;
+    const matchesCategory = 
+      categoryFilter === "all" ||
+      (categoryFilter === "florals" && design.category === "floral") ||
+      (categoryFilter === "stems" && design.category === "stem");
+    
+    const matchesEdition = 
+      editionFilter === "all" ||
+      design.edition === editionFilter;
+
+    return matchesCategory && matchesEdition;
   });
 
   const floralCount = allDesigns.filter(d => d.category === "floral").length;
   const stemCount = allDesigns.filter(d => d.category === "stem").length;
+  const october2025Count = allDesigns.filter(d => d.edition === "october2025").length;
+  const electricCount = allDesigns.filter(d => d.edition === "electric").length;
 
   // Close mobile menu when section changes
   const handleSectionChange = (section: string) => {
@@ -377,7 +510,41 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Filter Pills */}
+              {/* Edition Filter */}
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <button
+                  onClick={() => setEditionFilter("all")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "all"
+                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  All Editions <span className="ml-2 text-xs opacity-70">{allDesigns.length}</span>
+                </button>
+                <button
+                  onClick={() => setEditionFilter("october2025")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "october2025"
+                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  October 2025 Edition <span className="ml-2 text-xs opacity-70">{october2025Count}</span>
+                </button>
+                <button
+                  onClick={() => setEditionFilter("electric")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "electric"
+                      ? "bg-gradient-to-r from-amber-600 to-teal-600 text-white shadow-lg shadow-amber-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  Retro Florals <span className="ml-2 text-xs opacity-70">{electricCount}</span>
+                </button>
+              </div>
+
+              {/* Category Filter */}
               <div className="flex items-center justify-center gap-3">
                 <button
                   onClick={() => setCategoryFilter("all")}
@@ -387,7 +554,7 @@ export default function App() {
                       : "bg-gray-50 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  All <span className="ml-2 text-xs opacity-70">{allDesigns.length}</span>
+                  All <span className="ml-2 text-xs opacity-70">{filteredDesigns.length}</span>
                 </button>
                 <button
                   onClick={() => setCategoryFilter("florals")}
@@ -459,7 +626,41 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Filter Pills */}
+              {/* Edition Filter */}
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <button
+                  onClick={() => setEditionFilter("all")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "all"
+                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  All Editions <span className="ml-2 text-xs opacity-70">{allDesigns.length}</span>
+                </button>
+                <button
+                  onClick={() => setEditionFilter("october2025")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "october2025"
+                      ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  October 2025 Edition <span className="ml-2 text-xs opacity-70">{october2025Count}</span>
+                </button>
+                <button
+                  onClick={() => setEditionFilter("electric")}
+                  className={`px-8 py-3 rounded-full text-sm transition-all ${
+                    editionFilter === "electric"
+                      ? "bg-gradient-to-r from-amber-600 to-teal-600 text-white shadow-lg shadow-amber-500/30"
+                      : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  Retro Florals <span className="ml-2 text-xs opacity-70">{electricCount}</span>
+                </button>
+              </div>
+
+              {/* Category Filter */}
               <div className="flex items-center justify-center gap-3">
                 <button
                   onClick={() => setCategoryFilter("all")}
@@ -469,7 +670,7 @@ export default function App() {
                       : "bg-gray-50 text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  All <span className="ml-2 text-xs opacity-70">{allDesigns.length}</span>
+                  All <span className="ml-2 text-xs opacity-70">{filteredDesigns.length}</span>
                 </button>
                 <button
                   onClick={() => setCategoryFilter("florals")}
