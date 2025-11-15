@@ -13,7 +13,7 @@ export default function ElectricFloralThree({ size = 200, className = "" }: Prop
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco 8-point geometric starburst */}
+      {/* Technical 8-point geometric starburst - Monochrome */}
       
       {/* 8 symmetrical streamlined petals with 45° spacing */}
       {[...Array(8)].map((_, i) => {
@@ -35,9 +35,6 @@ export default function ElectricFloralThree({ size = 200, className = "" }: Prop
         const width2 = 6;
         const width3 = 3;
         
-        const colors = ["#B39C87", "#7A9299"];
-        const color = colors[i % 2];
-        
         return (
           <g key={i}>
             {/* Tapered petal path */}
@@ -51,22 +48,22 @@ export default function ElectricFloralThree({ size = 200, className = "" }: Prop
                 L ${innerX - Math.cos(perpAngle) * width1} ${innerY - Math.sin(perpAngle) * width1}
                 Z
               `}
-              fill={color}
+              fill="#5a5a5a"
               opacity="0.85"
             />
             {/* Decorative tip */}
-            <circle cx={tipX} cy={tipY} r="5" fill={color} opacity="0.7" />
-            <circle cx={tipX} cy={tipY} r="2" fill="#C4A582" />
+            <circle cx={tipX} cy={tipY} r="5" fill="#3a3a3a" opacity="0.7" />
+            <circle cx={tipX} cy={tipY} r="2" fill="#EDF2F7" />
           </g>
         );
       })}
       
       {/* Perfect concentric center */}
-      <circle cx="100" cy="100" r="32" fill="#8FA396" opacity="0.85" />
-      <circle cx="100" cy="100" r="22" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="14" fill="#A89080" opacity="0.8" />
-      <circle cx="100" cy="100" r="8" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="4" fill="#8B7355" />
+      <circle cx="100" cy="100" r="32" fill="#3a3a3a" opacity="0.85" />
+      <circle cx="100" cy="100" r="22" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="14" fill="#707070" opacity="0.8" />
+      <circle cx="100" cy="100" r="8" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="4" fill="#000E10" />
     </svg>
   );
 }

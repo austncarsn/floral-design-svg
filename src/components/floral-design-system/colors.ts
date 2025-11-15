@@ -1,40 +1,45 @@
 // Floral Design System Color Palette
-// Inspired by mid-century modern Scandinavian design
+// Refined mid-century modern color palette - muted, sophisticated, cohesive
 
 export const floralColors = {
-  // Primary Colors
-  coralRed: "#E64A2E",
-  warmOrange: "#E8663F",
+  // Dusty Corals & Terracottas (warm, earthy)
+  dustyCoral: "#D4866F",       // Soft terracotta coral
+  mutedTerracotta: "#C97A64",  // Warm clay
+  softPeach: "#E8A594",        // Gentle peach
   
-  // Secondary Colors
-  goldenYellow: "#F2A818",
-  sunflowerYellow: "#F5B82E",
+  // Sage & Olive Greens (natural, calming)
+  sageGreen: "#7A9B8E",        // Classic mid-century sage
+  oliveMist: "#8A9B7A",        // Olive with gray undertones
+  mintSage: "#9DB5A0",         // Soft mint sage
   
-  // Accent Colors
-  tealBlue: "#4A7C8C",
-  dustyBlue: "#5C8A9A",
+  // Muted Teals & Blues (sophisticated cool tones)
+  dustyTeal: "#5A8A8A",        // Muted teal
+  slateBlue: "#6B8A9B",        // Soft slate blue
+  powderBlue: "#8AA6B5",       // Gentle powder blue
   
-  // Neutrals
-  richBlack: "#1A1A1A",
-  charcoal: "#2D2D2D",
-  cream: "#F5EFE0",
-  lightBeige: "#E8DCC8",
-  warmWhite: "#FAF7F2",
+  // Warm Mustards & Golds (retro accent)
+  mustardGold: "#D4A855",      // Warm mustard
+  goldenHoney: "#C9A15C",      // Golden honey tone
+  butterscotch: "#D9B56C",     // Soft butterscotch
   
-  // Background
-  sandBeige: "#D4C5AB",
+  // Soft Lavenders & Mauves (dreamy pastels)
+  dustyLavender: "#B5A0B8",    // Muted lavender
+  softMauve: "#C4ADB8",        // Gentle mauve
+  lilacGray: "#AFA0B0",        // Grayish lilac
   
-  // Extended Palette - New Colors
-  terracotta: "#C9604A",
-  burntOrange: "#D47647",
-  mustardGold: "#D4A62A",
-  oliveGreen: "#7A8450",
-  sageGreen: "#9CAF88",
-  lavenderGray: "#B8A9C9",
-  dustyRose: "#C9858D",
-  mintGreen: "#A8C9B8",
-  softCoral: "#F08080",
-  deepTeal: "#2F5B6B",
+  // Warm Neutrals (sophisticated bases)
+  richBlack: "#1A1A1A",        // Deep black
+  charcoal: "#3A3A3A",         // Warm charcoal
+  warmTaupe: "#8A7B6F",        // Mid-tone taupe
+  sandBeige: "#C9B8A8",        // Warm sand
+  cream: "#E8DCC8",            // Creamy beige
+  ivory: "#F5EFE0",            // Soft ivory
+  warmWhite: "#FAF7F2",        // Warm white
+  
+  // Accent Pops (use sparingly)
+  burntOrange: "#C9754A",      // Retro burnt orange
+  cinnabar: "#D46B55",         // Warm red-orange
+  ochre: "#C9965A",            // Earth ochre
 } as const;
 
 export type FloralColorKey = keyof typeof floralColors;

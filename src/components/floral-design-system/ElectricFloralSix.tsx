@@ -13,58 +13,70 @@ export default function ElectricFloralSix({ size = 200, className = "" }: Props)
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco hexagonal geometric flower with 60° symmetry */}
+      {/* Technical diamond starburst - Monochrome */}
       
-      {/* Six-fold symmetric streamlined petals */}
-      {[0, 60, 120, 180, 240, 300].map((angle, i) => {
-        const rad = (angle * Math.PI) / 180;
-        const petalDistance = 60;
-        const x = 100 + Math.cos(rad) * petalDistance;
-        const y = 100 + Math.sin(rad) * petalDistance;
+      {/* 8 pointed diamonds radiating outward */}
+      {[...Array(8)].map((_, i) => {
+        const angle = (i * 45 * Math.PI) / 180;
+        const cx = 100;
+        const cy = 100;
+        const distance = 58;
+        const diamondSize = 18;
         
-        const colors = ["#D4A574", "#8FA396", "#C4A582", "#7A9299", "#A89080", "#B39C87"];
-        const color = colors[i];
+        const tipX = cx + Math.cos(angle) * distance;
+        const tipY = cy + Math.sin(angle) * distance;
+        
+        const perpAngle = angle + Math.PI / 2;
+        const sideWidth = diamondSize / 2;
+        const lengthBack = diamondSize * 0.8;
+        
+        // Diamond points
+        const p1x = tipX;
+        const p1y = tipY;
+        const p2x = cx + Math.cos(angle) * (distance - lengthBack) + Math.cos(perpAngle) * sideWidth;
+        const p2y = cy + Math.sin(angle) * (distance - lengthBack) + Math.sin(perpAngle) * sideWidth;
+        const p3x = cx + Math.cos(angle) * (distance - lengthBack * 1.3);
+        const p3y = cy + Math.sin(angle) * (distance - lengthBack * 1.3);
+        const p4x = cx + Math.cos(angle) * (distance - lengthBack) - Math.cos(perpAngle) * sideWidth;
+        const p4y = cy + Math.sin(angle) * (distance - lengthBack) - Math.sin(perpAngle) * sideWidth;
         
         return (
           <g key={i}>
-            {/* Decorative line from center to petal */}
-            <line
-              x1="100"
-              y1="100"
-              x2={x}
-              y2={y}
-              stroke="#9B8B7E"
-              strokeWidth="4"
-              opacity="0.7"
+            <path
+              d={`M ${p1x},${p1y} L ${p2x},${p2y} L ${p3x},${p3y} L ${p4x},${p4y} Z`}
+              fill="#5a5a5a"
+              opacity="0.85"
             />
-            
-            {/* Mid-point accent */}
-            <circle
-              cx={100 + Math.cos(rad) * (petalDistance * 0.5)}
-              cy={100 + Math.sin(rad) * (petalDistance * 0.5)}
-              r="4"
-              fill="#8B7355"
-              opacity="0.8"
-            />
-            
-            {/* Petal circle with ornamental layers */}
-            <circle cx={x} cy={y} r="24" fill={color} opacity="0.85" />
-            <circle cx={x} cy={y} r="18" fill="#E8DCC8" opacity="0.95" />
-            <circle cx={x} cy={y} r="12" fill={colors[(i + 2) % 6]} opacity="0.8" />
-            
-            {/* Terminal core */}
-            <circle cx={x} cy={y} r="6" fill="#E8DCC8" />
-            <circle cx={x} cy={y} r="3" fill="#8B7355" />
+            <circle cx={tipX} cy={tipY} r="4" fill="#3a3a3a" opacity="0.9" />
+            <circle cx={tipX} cy={tipY} r="2" fill="#EDF2F7" />
           </g>
         );
       })}
       
-      {/* Perfect center nexus */}
-      <circle cx="100" cy="100" r="28" fill="#A89080" opacity="0.85" />
-      <circle cx="100" cy="100" r="20" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="14" fill="#8FA396" opacity="0.8" />
-      <circle cx="100" cy="100" r="8" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="4" fill="#D4A574" />
+      {/* Inner connecting web */}
+      {[...Array(8)].map((_, i) => {
+        const angle = (i * 45 * Math.PI) / 180;
+        const innerRadius = 25;
+        
+        return (
+          <line
+            key={`web-${i}`}
+            x1={100 + Math.cos(angle) * innerRadius}
+            y1={100 + Math.sin(angle) * innerRadius}
+            x2={100 + Math.cos(angle + Math.PI / 4) * innerRadius}
+            y2={100 + Math.sin(angle + Math.PI / 4) * innerRadius}
+            stroke="#4a4a4a"
+            strokeWidth="3.5"
+            opacity="0.5"
+          />
+        );
+      })}
+      
+      {/* Central core */}
+      <circle cx="100" cy="100" r="22" fill="#2d2d2d" opacity="0.9" />
+      <circle cx="100" cy="100" r="15" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="9" fill="#707070" opacity="0.85" />
+      <circle cx="100" cy="100" r="4" fill="#000E10" />
     </svg>
   );
 }

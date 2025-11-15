@@ -26,10 +26,10 @@ export default function FloralThree({
         })}
         
         {/* Inner layer */}
-        <circle cx="100" cy="100" r="35" fill="#E64A2E" />
+        <circle cx="100" cy="100" r="35" fill="#D4866F" />
         
         {/* Center */}
-        <circle cx="100" cy="100" r="18" fill="#F5EFE0" />
+        <circle cx="100" cy="100" r="18" fill="#E8DCC8" />
       </svg>
     </div>
   );

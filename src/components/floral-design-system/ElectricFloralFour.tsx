@@ -13,79 +13,54 @@ export default function ElectricFloralFour({ size = 200, className = "" }: Props
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco geometric grid flower with 4-fold rotational symmetry */}
+      {/* Technical sunburst with radiating spokes - Monochrome */}
       
-      {/* Four perfectly rotated square petal modules */}
-      {[0, 45, 90, 135].map((rotation, i) => {
-        const colors = ["#D4A574", "#7A9299", "#C4A582", "#8FA396"];
-        const inverseColors = ["#A89080", "#B39C87", "#8B7355", "#9B8B7E"];
+      {/* 16 alternating length spokes */}
+      {[...Array(16)].map((_, i) => {
+        const angle = (i * 22.5 * Math.PI) / 180;
+        const isLong = i % 2 === 0;
+        const length = isLong ? 72 : 52;
+        const innerRadius = 18;
+        const strokeWidth = isLong ? 2.5 : 1.5;
         
         return (
-          <g key={i} transform={`rotate(${rotation} 100 100)`}>
-            {/* Outer square petal */}
-            <rect
-              x="76"
-              y="26"
-              width="48"
-              height="48"
-              fill={colors[i]}
-              opacity="0.85"
-            />
-            {/* Inner frame */}
-            <rect
-              x="82"
-              y="32"
-              width="36"
-              height="36"
-              fill="#E8DCC8"
-              opacity="0.95"
-            />
-            {/* Middle square */}
-            <rect
-              x="88"
-              y="38"
-              width="24"
-              height="24"
-              fill={inverseColors[i]}
+          <g key={i}>
+            <line
+              x1={100 + Math.cos(angle) * innerRadius}
+              y1={100 + Math.sin(angle) * innerRadius}
+              x2={100 + Math.cos(angle) * length}
+              y2={100 + Math.sin(angle) * length}
+              stroke="#2d2d2d"
+              strokeWidth={strokeWidth + 2}
+              strokeLinecap="round"
               opacity="0.8"
             />
-            {/* Inner accent */}
-            <rect
-              x="94"
-              y="44"
-              width="12"
-              height="12"
-              fill="#E8DCC8"
-            />
-            {/* Core pixel */}
-            <rect
-              x="98"
-              y="48"
-              width="4"
-              height="4"
-              fill={colors[i]}
-            />
+            {isLong && (
+              <>
+                <circle
+                  cx={100 + Math.cos(angle) * length}
+                  cy={100 + Math.sin(angle) * length}
+                  r="4"
+                  fill="#3a3a3a"
+                  opacity="0.85"
+                />
+                <circle
+                  cx={100 + Math.cos(angle) * length}
+                  cy={100 + Math.sin(angle) * length}
+                  r="2"
+                  fill="#EDF2F7"
+                />
+              </>
+            )}
           </g>
         );
       })}
       
-      {/* Perfect center diamond (rotated square) */}
-      <path
-        d="M 100 72 L 118 90 L 100 108 L 82 90 Z"
-        fill="#A89080"
-        opacity="0.85"
-      />
-      <path
-        d="M 100 78 L 112 90 L 100 102 L 88 90 Z"
-        fill="#E8DCC8"
-      />
-      <path
-        d="M 100 82 L 108 90 L 100 98 L 92 90 Z"
-        fill="#8FA396"
-        opacity="0.8"
-      />
-      <circle cx="100" cy="90" r="6" fill="#E8DCC8" />
-      <circle cx="100" cy="90" r="3" fill="#8B7355" />
+      {/* Elegant center medallion */}
+      <circle cx="100" cy="100" r="16" fill="#2d2d2d" opacity="0.9" />
+      <circle cx="100" cy="100" r="11" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="7" fill="#707070" opacity="0.85" />
+      <circle cx="100" cy="100" r="3.5" fill="#000E10" />
     </svg>
   );
 }

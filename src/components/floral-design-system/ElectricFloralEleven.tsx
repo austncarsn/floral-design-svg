@@ -13,7 +13,7 @@ export default function ElectricFloralEleven({ size = 200, className = "" }: Pro
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco pentagon star with vintage charm */}
+      {/* Technical pentagon star - Chrome Prep palette */}
       
       {/* Pentagon-based star pattern */}
       {[...Array(5)].map((_, i) => {
@@ -29,7 +29,7 @@ export default function ElectricFloralEleven({ size = 200, className = "" }: Pro
         const x2 = 100 + Math.cos(innerAngle) * innerRadius;
         const y2 = 100 + Math.sin(innerAngle) * innerRadius;
         
-        const colors = ["#D4A574", "#7A9299", "#C4A582", "#8FA396", "#A89080"];
+        const colors = ["#1E6FE8", "#252A30", "#D4E817", "#A8B1BC", "#1E6FE8"];
         
         return (
           <g key={i}>
@@ -46,17 +46,17 @@ export default function ElectricFloralEleven({ size = 200, className = "" }: Pro
             />
             {/* Point ornament */}
             <circle cx={x1} cy={y1} r="11" fill={colors[i]} opacity="0.85" />
-            <circle cx={x1} cy={y1} r="6" fill="#E8DCC8" />
-            <circle cx={x1} cy={y1} r="3" fill="#8B7355" />
+            <circle cx={x1} cy={y1} r="6" fill="#EDF2F7" />
+            <circle cx={x1} cy={y1} r="3" fill="#000E10" />
           </g>
         );
       })}
       
       {/* Center medallion */}
-      <circle cx="100" cy="100" r="30" fill="#B39C87" opacity="0.85" />
-      <circle cx="100" cy="100" r="21" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="14" fill="#9B8B7E" opacity="0.8" />
-      <circle cx="100" cy="100" r="7" fill="#8B7355" />
+      <circle cx="100" cy="100" r="30" fill="#A8B1BC" opacity="0.85" />
+      <circle cx="100" cy="100" r="21" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="14" fill="#252A30" opacity="0.8" />
+      <circle cx="100" cy="100" r="7" fill="#000E10" />
     </svg>
   );
 }

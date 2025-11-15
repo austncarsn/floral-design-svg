@@ -13,49 +13,58 @@ export default function ElectricFloralTen({ size = 200, className = "" }: Props)
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco octagonal mandala */}
+      {/* Technical propeller starburst - Monochrome */}
       
-      {/* 8 layered petal elements */}
-      {[...Array(8)].map((_, i) => {
-        const angle = (i * 45 * Math.PI) / 180;
-        const distance = 58;
-        const x = 100 + Math.cos(angle) * distance;
-        const y = 100 + Math.sin(angle) * distance;
+      {/* 6 curved propeller blades */}
+      {[...Array(6)].map((_, i) => {
+        const angle = (i * 60 * Math.PI) / 180;
+        const innerRadius = 25;
+        const outerRadius = 72;
+        const curveOffset = 12;
         
-        const colors = ["#D4A574", "#8FA396", "#C4A582", "#7A9299"];
-        const color = colors[i % 4];
+        const startX = 100 + Math.cos(angle) * innerRadius;
+        const startY = 100 + Math.sin(angle) * innerRadius;
+        const endX = 100 + Math.cos(angle) * outerRadius;
+        const endY = 100 + Math.sin(angle) * outerRadius;
+        
+        // Perpendicular for curve
+        const perpAngle = angle + Math.PI / 2;
+        const controlX = 100 + Math.cos(angle) * ((innerRadius + outerRadius) / 2) + Math.cos(perpAngle) * curveOffset;
+        const controlY = 100 + Math.sin(angle) * ((innerRadius + outerRadius) / 2) + Math.sin(perpAngle) * curveOffset;
         
         return (
           <g key={i}>
-            {/* Petal element */}
-            <circle cx={x} cy={y} r="22" fill={color} opacity="0.85" />
-            <circle cx={x} cy={y} r="15" fill="#E8DCC8" opacity="0.95" />
-            <circle cx={x} cy={y} r="9" fill={color} opacity="0.7" />
-            <circle cx={x} cy={y} r="4" fill="#8B7355" />
+            {/* Curved blade */}
+            <path
+              d={`M ${startX},${startY} Q ${controlX},${controlY} ${endX},${endY}`}
+              fill="none"
+              stroke="#3a3a3a"
+              strokeWidth="10"
+              strokeLinecap="round"
+              opacity="0.75"
+            />
+            <path
+              d={`M ${startX},${startY} Q ${controlX},${controlY} ${endX},${endY}`}
+              fill="none"
+              stroke="#EDF2F7"
+              strokeWidth="5"
+              strokeLinecap="round"
+              opacity="0.9"
+            />
+            
+            {/* Blade tip ornament */}
+            <circle cx={endX} cy={endY} r="7" fill="#2d2d2d" opacity="0.9" />
+            <circle cx={endX} cy={endY} r="4" fill="#EDF2F7" />
+            <circle cx={endX} cy={endY} r="2" fill="#3a3a3a" />
           </g>
         );
       })}
       
-      {/* Connecting lines forming octagon */}
-      <path
-        d={[...Array(8)].map((_, i) => {
-          const angle = (i * 45 * Math.PI) / 180;
-          const distance = 58;
-          const x = 100 + Math.cos(angle) * distance;
-          const y = 100 + Math.sin(angle) * distance;
-          return i === 0 ? `M ${x},${y}` : `L ${x},${y}`;
-        }).join(' ') + ' Z'}
-        fill="none"
-        stroke="#9B8B7E"
-        strokeWidth="2"
-        opacity="0.6"
-      />
-      
-      {/* Central element */}
-      <circle cx="100" cy="100" r="32" fill="#A89080" opacity="0.85" />
-      <circle cx="100" cy="100" r="22" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="14" fill="#B39C87" opacity="0.8" />
-      <circle cx="100" cy="100" r="7" fill="#8B7355" />
+      {/* Central hub */}
+      <circle cx="100" cy="100" r="22" fill="#2d2d2d" opacity="0.9" />
+      <circle cx="100" cy="100" r="16" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="10" fill="#707070" opacity="0.85" />
+      <circle cx="100" cy="100" r="5" fill="#000E10" />
     </svg>
   );
 }

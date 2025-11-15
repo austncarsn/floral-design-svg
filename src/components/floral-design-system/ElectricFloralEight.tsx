@@ -13,47 +13,69 @@ export default function ElectricFloralEight({ size = 200, className = "" }: Prop
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco 5-point star with vintage elegance */}
+      {/* Technical triangular atomic burst - Monochrome */}
       
-      {/* Five perfect star points with 72° spacing */}
-      {[...Array(5)].map((_, i) => {
-        const angle = (i * 72 - 90) * Math.PI / 180;
-        const innerAngle = ((i * 72) + 36 - 90) * Math.PI / 180;
+      {/* 6 elongated triangular petals */}
+      {[...Array(6)].map((_, i) => {
+        const angle = (i * 60 * Math.PI) / 180;
+        const innerRadius = 28;
+        const outerRadius = 70;
         
-        const outerRadius = 75;
-        const innerRadius = 30;
+        const tipX = 100 + Math.cos(angle) * outerRadius;
+        const tipY = 100 + Math.sin(angle) * outerRadius;
         
-        const x1 = 100 + Math.cos(angle) * outerRadius;
-        const y1 = 100 + Math.sin(angle) * outerRadius;
-        const x2 = 100 + Math.cos(innerAngle) * innerRadius;
-        const y2 = 100 + Math.sin(innerAngle) * innerRadius;
-        const nextAngle = ((i + 1) * 72 - 90) * Math.PI / 180;
-        const x3 = 100 + Math.cos(nextAngle) * outerRadius;
-        const y3 = 100 + Math.sin(nextAngle) * outerRadius;
+        const baseAngle1 = angle - (Math.PI / 12);
+        const baseAngle2 = angle + (Math.PI / 12);
         
-        const colors = ["#D4A574", "#7A9299", "#C4A582", "#8FA396", "#A89080"];
+        const base1X = 100 + Math.cos(baseAngle1) * innerRadius;
+        const base1Y = 100 + Math.sin(baseAngle1) * innerRadius;
+        const base2X = 100 + Math.cos(baseAngle2) * innerRadius;
+        const base2Y = 100 + Math.sin(baseAngle2) * innerRadius;
         
         return (
           <g key={i}>
-            {/* Star point */}
+            {/* Main triangle */}
             <path
-              d={`M ${x1},${y1} L ${x2},${y2} L ${x3},${y3} L 100,100 Z`}
-              fill={colors[i]}
-              opacity="0.85"
+              d={`M ${tipX},${tipY} L ${base1X},${base1Y} L ${base2X},${base2Y} Z`}
+              fill="#5a5a5a"
+              opacity="0.8"
             />
-            {/* Decorative tip */}
-            <circle cx={x1} cy={y1} r="8" fill={colors[i]} opacity="0.9" />
-            <circle cx={x1} cy={y1} r="4" fill="#E8DCC8" />
+            {/* Inner accent triangle */}
+            <path
+              d={`M ${100 + Math.cos(angle) * (outerRadius * 0.6)},${100 + Math.sin(angle) * (outerRadius * 0.6)} 
+                  L ${100 + Math.cos(baseAngle1) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle1) * (innerRadius * 1.3)} 
+                  L ${100 + Math.cos(baseAngle2) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle2) * (innerRadius * 1.3)} Z`}
+              fill="#EDF2F7"
+              opacity="0.7"
+            />
+            {/* Tip ornament */}
+            <circle cx={tipX} cy={tipY} r="5" fill="#3a3a3a" opacity="0.9" />
+            <circle cx={tipX} cy={tipY} r="2.5" fill="#EDF2F7" />
           </g>
         );
       })}
       
-      {/* Central ornament */}
-      <circle cx="100" cy="100" r="26" fill="#B39C87" opacity="0.85" />
-      <circle cx="100" cy="100" r="18" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="12" fill="#9B8B7E" opacity="0.8" />
-      <circle cx="100" cy="100" r="6" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="3" fill="#8B7355" />
+      {/* Elegant hexagonal center */}
+      {(() => {
+        const hexPoints = [...Array(6)].map((_, i) => {
+          const angle = (i * 60 - 30) * Math.PI / 180;
+          return {
+            x: 100 + Math.cos(angle) * 24,
+            y: 100 + Math.sin(angle) * 24
+          };
+        });
+        const pathD = `M ${hexPoints.map(p => `${p.x},${p.y}`).join(' L ')} Z`;
+        
+        return (
+          <>
+            <path d={pathD} fill="#3a3a3a" opacity="0.9" />
+            <path d={pathD} fill="none" stroke="#2d2d2d" strokeWidth="4" opacity="0.6" />
+          </>
+        );
+      })()}
+      
+      <circle cx="100" cy="100" r="12" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="6" fill="#000E10" />
     </svg>
   );
 }

@@ -27,14 +27,14 @@ export default function FloralTwo({
               cy={cy}
               rx="18"
               ry="35"
-              fill="#4A7C8C"
+              fill="#5A8A8A"
               transform={`rotate(${angle} ${cx} ${cy})`}
             />
           );
         })}
         
         {/* Center */}
-        <circle cx="100" cy="100" r="22" fill="#F5EFE0" />
+        <circle cx="100" cy="100" r="22" fill="#E8DCC8" />
       </svg>
     </div>
   );

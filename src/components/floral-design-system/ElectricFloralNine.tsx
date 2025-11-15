@@ -13,55 +13,64 @@ export default function ElectricFloralNine({ size = 200, className = "" }: Props
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* 1930s Art Deco radial sunburst pattern */}
+      {/* Technical concentric ring burst - Monochrome */}
       
-      {/* 16 radial lines creating Art Deco sunburst */}
+      {/* Outer ring with 16 nodes */}
       {[...Array(16)].map((_, i) => {
         const angle = (i * 22.5 * Math.PI) / 180;
-        const innerRadius = 25;
-        const outerRadius = 80;
-        const color = i % 2 === 0 ? "#D4A574" : "#7A9299";
+        const radius = 68;
+        const x = 100 + Math.cos(angle) * radius;
+        const y = 100 + Math.sin(angle) * radius;
+        const size = i % 2 === 0 ? 7 : 5;
         
         return (
-          <line
-            key={i}
-            x1={100 + Math.cos(angle) * innerRadius}
-            y1={100 + Math.sin(angle) * innerRadius}
-            x2={100 + Math.cos(angle) * outerRadius}
-            y2={100 + Math.sin(angle) * outerRadius}
-            stroke={color}
-            strokeWidth="6"
-            strokeLinecap="round"
-            opacity="0.8"
-          />
+          <g key={i}>
+            <circle cx={x} cy={y} r={size} fill="#3a3a3a" opacity="0.85" />
+            <circle cx={x} cy={y} r={size * 0.5} fill="#EDF2F7" />
+          </g>
         );
       })}
       
-      {/* Circular terminals */}
-      {[...Array(16)].map((_, i) => {
-        const angle = (i * 22.5 * Math.PI) / 180;
-        const outerRadius = 80;
-        const x = 100 + Math.cos(angle) * outerRadius;
-        const y = 100 + Math.sin(angle) * outerRadius;
-        const color = i % 2 === 0 ? "#D4A574" : "#7A9299";
+      {/* Ring connections */}
+      <circle cx="100" cy="100" r="68" fill="none" stroke="#5a5a5a" strokeWidth="3" opacity="0.4" />
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#4a4a4a" strokeWidth="3.5" opacity="0.5" />
+      <circle cx="100" cy="100" r="35" fill="none" stroke="#3a3a3a" strokeWidth="4" opacity="0.6" />
+      
+      {/* Middle ring with 12 nodes */}
+      {[...Array(12)].map((_, i) => {
+        const angle = (i * 30 * Math.PI) / 180;
+        const radius = 50;
+        const x = 100 + Math.cos(angle) * radius;
+        const y = 100 + Math.sin(angle) * radius;
         
         return (
-          <circle
-            key={i}
-            cx={x}
-            cy={y}
-            r="7"
-            fill={color}
-            opacity="0.85"
-          />
+          <g key={`mid-${i}`}>
+            <circle cx={x} cy={y} r="6" fill="#4a4a4a" opacity="0.8" />
+            <circle cx={x} cy={y} r="3" fill="#EDF2F7" />
+          </g>
         );
       })}
       
-      {/* Center medallion */}
-      <circle cx="100" cy="100" r="22" fill="#C4A582" opacity="0.85" />
-      <circle cx="100" cy="100" r="15" fill="#E8DCC8" />
-      <circle cx="100" cy="100" r="9" fill="#8FA396" opacity="0.8" />
-      <circle cx="100" cy="100" r="4" fill="#8B7355" />
+      {/* Inner ring with 8 nodes */}
+      {[...Array(8)].map((_, i) => {
+        const angle = (i * 45 * Math.PI) / 180;
+        const radius = 35;
+        const x = 100 + Math.cos(angle) * radius;
+        const y = 100 + Math.sin(angle) * radius;
+        
+        return (
+          <g key={`inner-${i}`}>
+            <circle cx={x} cy={y} r="5" fill="#5a5a5a" opacity="0.85" />
+            <circle cx={x} cy={y} r="2" fill="#EDF2F7" />
+          </g>
+        );
+      })}
+      
+      {/* Central nucleus */}
+      <circle cx="100" cy="100" r="18" fill="#2d2d2d" opacity="0.9" />
+      <circle cx="100" cy="100" r="12" fill="#EDF2F7" />
+      <circle cx="100" cy="100" r="7" fill="#707070" opacity="0.9" />
+      <circle cx="100" cy="100" r="3" fill="#000E10" />
     </svg>
   );
 }
