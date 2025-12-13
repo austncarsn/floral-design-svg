@@ -1,4 +1,4 @@
-// Olive green pentagon with terracotta dots (perfectly symmetrical)
+// Sophisticated nested pentagons with sage, cream, and teal sophistication
 interface FloralFortyProps {
   size?: number;
   className?: string;
@@ -11,21 +11,41 @@ export default function FloralForty({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Outer pentagon - olive green (mathematically precise) */}
-        <path d="M 100 30 L 161.8 85.9 L 138.1 154.9 L 61.9 154.9 L 38.2 85.9 Z" fill="#7A8450" />
+        {/* Outer pentagon - refined sage */}
+        <path 
+          d="M 100 42 L 150 88 L 132 145 L 68 145 L 50 88 Z" 
+          fill="#8A9B7A" 
+        />
         
-        {/* Inner pentagon - light beige */}
-        <path d="M 100 60 L 142.4 99.5 L 125.3 145.5 L 74.7 145.5 L 57.6 99.5 Z" fill="#E8DCC8" />
+        {/* Mid pentagon highlight */}
+        <path 
+          d="M 100 54 L 142 92 L 127 138 L 73 138 L 58 92 Z" 
+          fill="#9DB5A0" 
+          opacity="0.5"
+        />
         
-        {/* Five terracotta dots at vertices */}
-        <circle cx="100" cy="30" r="10" fill="#C9604A" />
-        <circle cx="161.8" cy="85.9" r="10" fill="#C9604A" />
-        <circle cx="138.1" cy="154.9" r="10" fill="#C9604A" />
-        <circle cx="61.9" cy="154.9" r="10" fill="#C9604A" />
-        <circle cx="38.2" cy="85.9" r="10" fill="#C9604A" />
+        {/* Inner pentagon - cream */}
+        <path 
+          d="M 100 66 L 134 96 L 122 130 L 78 130 L 66 96 Z" 
+          fill="#E8DCC8" 
+        />
         
-        {/* Center pentagon - deep teal */}
-        <path d="M 100 85 L 117.1 100 L 109.4 120 L 90.6 120 L 82.9 100 Z" fill="#2F5B6B" />
+        {/* Five terracotta vertex dots */}
+        <circle cx="100" cy="42" r="8" fill="#C97A64" />
+        <circle cx="150" cy="88" r="8" fill="#C97A64" />
+        <circle cx="132" cy="145" r="8" fill="#C97A64" />
+        <circle cx="68" cy="145" r="8" fill="#C97A64" />
+        <circle cx="50" cy="88" r="8" fill="#C97A64" />
+        
+        {/* Center pentagon - refined teal */}
+        <path 
+          d="M 100 88 L 112 97 L 106 113 L 94 113 L 88 97 Z" 
+          fill="#5A8A8A" 
+        />
+        
+        {/* Center circle */}
+        <circle cx="100" cy="101" r="7" fill="#E8DCC8" />
+        <circle cx="100" cy="101" r="3" fill="#8A9B7A" />
       </svg>
     </div>
   );

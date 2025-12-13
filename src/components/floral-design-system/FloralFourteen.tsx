@@ -1,4 +1,4 @@
-// Mustard gold sunburst with olive center (perfectly symmetrical)
+// Sophisticated hexagon burst with coral and cream alternating elegance
 interface FloralFourteenProps {
   size?: number;
   className?: string;
@@ -10,31 +10,65 @@ export default function FloralFourteen({
 }: FloralFourteenProps) {
   const centerX = 100;
   const centerY = 100;
-  const radius = 45;
+  const phi = 1.618;
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* 16 radiating thin petals at 22.5-degree intervals */}
-        {Array.from({ length: 16 }, (_, i) => i * 22.5).map((angle, i) => {
+        {/* 6 outer petals - coral */}
+        {[0, 60, 120, 180, 240, 300].map((angle, i) => {
           const rad = (angle * Math.PI) / 180;
-          const cx = centerX + Math.cos(rad) * radius;
-          const cy = centerY + Math.sin(rad) * radius;
+          const distance = 38;
+          const cx = centerX + Math.cos(rad) * distance;
+          const cy = centerY + Math.sin(rad) * distance;
+          return (
+            <g key={`outer-${i}`}>
+              {/* Main petal */}
+              <ellipse
+                cx={cx}
+                cy={cy}
+                rx="24"
+                ry="26"
+                fill="#D4866F"
+                transform={`rotate(${angle} ${cx} ${cy})`}
+              />
+              {/* Subtle highlight */}
+              <ellipse
+                cx={cx}
+                cy={cy}
+                rx="15"
+                ry="17"
+                fill="#E8A594"
+                opacity="0.6"
+                transform={`rotate(${angle} ${cx} ${cy})`}
+              />
+            </g>
+          );
+        })}
+        
+        {/* 6 inner petals - cream, offset 30° */}
+        {[30, 90, 150, 210, 270, 330].map((angle, i) => {
+          const rad = (angle * Math.PI) / 180;
+          const distance = 22;
+          const cx = centerX + Math.cos(rad) * distance;
+          const cy = centerY + Math.sin(rad) * distance;
           return (
             <ellipse
-              key={i}
+              key={`inner-${i}`}
               cx={cx}
               cy={cy}
-              rx="10"
-              ry="28"
-              fill="#D4A62A"
+              rx="14"
+              ry="16"
+              fill="#E8DCC8"
               transform={`rotate(${angle} ${cx} ${cy})`}
             />
           );
         })}
         
-        {/* Center */}
-        <circle cx="100" cy="100" r="25" fill="#7A8450" />
+        {/* Layered center */}
+        <circle cx="100" cy="100" r="18" fill="#5A8A8A" />
+        <circle cx="100" cy="100" r="12" fill="#6B8A9B" />
+        <circle cx="100" cy="100" r="6" fill="#E8DCC8" />
       </svg>
     </div>
   );

@@ -8,35 +8,52 @@ export default function StemTwentyEight({
   size = 200, 
   className = "" 
 }: StemTwentyEightProps) {
-  const stemColor = "#7A8450";
-  const leafColor = "#9CAF88";
+  const stemColor = "#8A9B7A";
+  const leafColor = "#9DB5A0";
+  const highlightColor = "#C4D9C5";
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Gracefully winding vine */}
-        <path d="M 90 180 Q 88 140 98 100 Q 108 60 98 20" stroke={stemColor} strokeWidth="5" fill="none" strokeLinecap="round" />
+        {/* Gracefully winding vine - refined S-curve */}
+        <path d="M 88 178 Q 86 138 98 98 Q 110 58 98 22" stroke={stemColor} strokeWidth="5.5" fill="none" strokeLinecap="round" />
+        <path d="M 88 178 Q 86 138 98 98 Q 110 58 98 22" stroke={stemColor} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.3" transform="translate(0.5, 0.5)" />
         
-        {/* Ivy leaves - five-pointed, perfectly symmetrical pairs */}
+        {/* Ivy leaves - five-pointed, refined with highlights */}
         {/* Top pair */}
-        <path d="M 95 30 L 88 28 L 85 35 L 88 40 L 93 38 Z" fill={leafColor} />
-        <path d="M 100 25 L 98 18 L 103 15 L 108 20 L 105 28 Z" fill={leafColor} />
+        <path d="M 93 28 L 86 26 L 83 33 L 86 38 L 91 36 Z" fill={leafColor} />
+        <path d="M 93 28 L 88 27 L 87 32 L 89 35 L 92 34 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 100 23 L 98 16 L 103 13 L 108 18 L 105 26 Z" fill={leafColor} />
+        <path d="M 100 23 L 99 18 L 102 16 L 105 20 L 103 24 Z" fill={highlightColor} opacity="0.6" />
         
         {/* Upper middle pair */}
-        <path d="M 105 60 L 98 58 L 95 65 L 98 70 L 103 68 Z" fill={leafColor} />
-        <path d="M 110 55 L 108 48 L 113 45 L 118 50 L 115 58 Z" fill={leafColor} />
+        <path d="M 107 58 L 100 56 L 97 63 L 100 68 L 105 66 Z" fill={leafColor} />
+        <path d="M 107 58 L 102 57 L 101 62 L 103 65 L 106 64 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 112 53 L 110 46 L 115 43 L 120 48 L 117 56 Z" fill={leafColor} />
+        <path d="M 112 53 L 111 48 L 114 46 L 117 50 L 115 54 Z" fill={highlightColor} opacity="0.6" />
         
         {/* Middle pair */}
-        <path d="M 95 100 L 88 98 L 85 105 L 88 110 L 93 108 Z" fill={leafColor} />
-        <path d="M 100 95 L 98 88 L 103 85 L 108 90 L 105 98 Z" fill={leafColor} />
+        <path d="M 93 98 L 86 96 L 83 103 L 86 108 L 91 106 Z" fill={leafColor} />
+        <path d="M 93 98 L 88 97 L 87 102 L 89 105 L 92 104 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 100 93 L 98 86 L 103 83 L 108 88 L 105 96 Z" fill={leafColor} />
+        <path d="M 100 93 L 99 88 L 102 86 L 105 90 L 103 94 Z" fill={highlightColor} opacity="0.6" />
         
         {/* Lower middle pair */}
-        <path d="M 88 140 L 81 138 L 78 145 L 81 150 L 86 148 Z" fill={leafColor} />
-        <path d="M 93 135 L 91 128 L 96 125 L 101 130 L 98 138 Z" fill={leafColor} />
+        <path d="M 86 138 L 79 136 L 76 143 L 79 148 L 84 146 Z" fill={leafColor} />
+        <path d="M 86 138 L 81 137 L 80 142 L 82 145 L 85 144 Z" fill={highlightColor} opacity="0.6" />
         
-        {/* Curling tendrils - perfectly symmetrical */}
-        <path d="M 105 75 Q 118 72 122 80 Q 124 86 120 90" stroke={stemColor} strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M 92 120 Q 79 123 75 131 Q 73 137 77 141" stroke={stemColor} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+        <path d="M 91 133 L 89 126 L 94 123 L 99 128 L 96 136 Z" fill={leafColor} />
+        <path d="M 91 133 L 90 128 L 93 126 L 96 130 L 94 134 Z" fill={highlightColor} opacity="0.6" />
+        
+        {/* Curling tendrils - refined curves with shadows */}
+        <path d="M 107 73 Q 120 70 124 78 Q 126 84 122 88" stroke={stemColor} strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path d="M 107 73 Q 120 70 124 78 Q 126 84 122 88" stroke={stemColor} strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.3" transform="translate(0.5, 0.5)" />
+        
+        <path d="M 90 118 Q 77 121 73 129 Q 71 135 75 139" stroke={stemColor} strokeWidth="3" fill="none" strokeLinecap="round" />
+        <path d="M 90 118 Q 77 121 73 129 Q 71 135 75 139" stroke={stemColor} strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.3" transform="translate(0.5, 0.5)" />
       </svg>
     </div>
   );

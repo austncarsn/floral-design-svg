@@ -8,24 +8,44 @@ export default function StemSixteen({
   size = 200, 
   className = "" 
 }: StemSixteenProps) {
-  const stemColor = "#7A8450";
-  const leafColor = "#9CAF88";
+  const stemColor = "#8A9B7A";
+  const leafColor = "#9DB5A0";
+  const highlightColor = "#C4D9C5";
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Gracefully curved main stem */}
-        <path d="M 90 180 Q 100 120 98 60 Q 96 30 100 20" stroke={stemColor} strokeWidth="5" fill="none" strokeLinecap="round" />
+        <defs>
+          {/* Gradient for stem */}
+          <linearGradient id="stemGrad16" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor={stemColor} stopOpacity="0.9" />
+            <stop offset="100%" stopColor={stemColor} stopOpacity="1" />
+          </linearGradient>
+        </defs>
         
-        {/* Teardrop leaves - left side (perfectly mirrored) */}
-        <path d="M 98 60 Q 70 62 60 80 Q 72 75 98 68 Z" fill={leafColor} />
-        <path d="M 96 100 Q 72 105 65 122 Q 76 116 96 108 Z" fill={leafColor} />
-        <path d="M 93 140 Q 70 145 63 162 Q 74 156 93 148 Z" fill={leafColor} />
+        {/* Gracefully curved main stem - refined S-curve */}
+        <path d="M 88 178 Q 100 118 98 58 Q 96 32 100 22" stroke="url(#stemGrad16)" strokeWidth="5.5" fill="none" strokeLinecap="round" />
+        <path d="M 88 178 Q 100 118 98 58 Q 96 32 100 22" stroke={stemColor} strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.3" transform="translate(0.5, 0.5)" />
         
-        {/* Teardrop leaves - right side (mirror symmetry) */}
-        <path d="M 98 68 Q 126 70 136 88 Q 124 83 98 75 Z" fill={leafColor} />
-        <path d="M 96 108 Q 120 113 127 130 Q 116 124 96 116 Z" fill={leafColor} />
-        <path d="M 93 148 Q 116 153 123 170 Q 112 164 93 156 Z" fill={leafColor} />
+        {/* Teardrop leaves - left side with highlights */}
+        <path d="M 98 58 Q 68 60 58 78 Q 70 73 98 66 Z" fill={leafColor} />
+        <path d="M 98 58 Q 78 60 72 70 Q 78 68 98 64 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 96 98 Q 70 103 63 120 Q 74 114 96 106 Z" fill={leafColor} />
+        <path d="M 96 98 Q 78 101 72 110 Q 78 108 96 104 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 91 138 Q 68 143 61 160 Q 72 154 91 146 Z" fill={leafColor} />
+        <path d="M 91 138 Q 76 141 70 150 Q 76 148 91 144 Z" fill={highlightColor} opacity="0.6" />
+        
+        {/* Teardrop leaves - right side with mirror highlights */}
+        <path d="M 98 66 Q 128 68 138 86 Q 126 81 98 73 Z" fill={leafColor} />
+        <path d="M 98 66 Q 118 68 124 78 Q 118 76 98 70 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 96 106 Q 122 111 129 128 Q 118 122 96 114 Z" fill={leafColor} />
+        <path d="M 96 106 Q 112 109 118 118 Q 112 116 96 112 Z" fill={highlightColor} opacity="0.6" />
+        
+        <path d="M 91 146 Q 114 151 121 168 Q 110 162 91 154 Z" fill={leafColor} />
+        <path d="M 91 146 Q 104 149 110 158 Q 104 156 91 152 Z" fill={highlightColor} opacity="0.6" />
       </svg>
     </div>
   );

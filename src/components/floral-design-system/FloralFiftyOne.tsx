@@ -12,26 +12,30 @@ export default function FloralFiftyOne({
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Four curved petal shapes in perfect symmetry */}
-        {/* Top petal - lavender */}
-        <path d="M 100 40 Q 70 70 100 100 Q 130 70 100 40 Z" fill="#B8A9C9" />
+        {/* Top petal - refined lavender */}
+        <path d="M 100 46 Q 74 74 100 100 Q 126 74 100 46 Z" fill="#C4ADB8" />
+        <path d="M 100 54 Q 82 82 100 100 Q 118 82 100 54 Z" fill="#D4C4E0" opacity="0.6" />
         
-        {/* Right petal - coral */}
-        <path d="M 160 100 Q 130 70 100 100 Q 130 130 160 100 Z" fill="#F08080" />
+        {/* Right petal - refined coral */}
+        <path d="M 154 100 Q 126 74 100 100 Q 126 126 154 100 Z" fill="#D4866F" />
+        <path d="M 146 100 Q 118 82 100 100 Q 118 118 146 100 Z" fill="#E8A594" opacity="0.6" />
         
-        {/* Bottom petal - lavender */}
-        <path d="M 100 160 Q 130 130 100 100 Q 70 130 100 160 Z" fill="#B8A9C9" />
+        {/* Bottom petal - refined lavender */}
+        <path d="M 100 154 Q 126 126 100 100 Q 74 126 100 154 Z" fill="#C4ADB8" />
+        <path d="M 100 146 Q 118 118 100 100 Q 82 118 100 146 Z" fill="#D4C4E0" opacity="0.6" />
         
-        {/* Left petal - coral */}
-        <path d="M 40 100 Q 70 130 100 100 Q 70 70 40 100 Z" fill="#F08080" />
+        {/* Left petal - refined coral */}
+        <path d="M 46 100 Q 74 126 100 100 Q 74 74 46 100 Z" fill="#D4866F" />
+        <path d="M 54 100 Q 82 118 100 100 Q 82 82 54 100 Z" fill="#E8A594" opacity="0.6" />
         
-        {/* Center square - sage green */}
-        <rect x="80" y="80" width="40" height="40" fill="#9CAF88" transform="rotate(45 100 100)" />
+        {/* Center square - refined sage */}
+        <rect x="82" y="82" width="36" height="36" fill="#8A9B7A" transform="rotate(45 100 100)" />
         
         {/* Center circle - cream */}
-        <circle cx="100" cy="100" r="15" fill="#F5EFE0" />
+        <circle cx="100" cy="100" r="14" fill="#E8DCC8" />
         
-        {/* Center dot - charcoal */}
-        <circle cx="100" cy="100" r="6" fill="#2D2D2D" />
+        {/* Center dot - refined dark */}
+        <circle cx="100" cy="100" r="5" fill="#1A1A1A" />
       </svg>
     </div>
   );

@@ -1,5 +1,4 @@
 import { Menu, X } from "lucide-react";
-import Logo from "./Logo";
 
 const NAV_ITEMS = [
   { id: "gallery", label: "Gallery" },
@@ -37,11 +36,8 @@ export default function Navigation({
       aria-label="Main navigation"
     >
       <div className="container-responsive">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Logo onClick={() => handleNavClick("gallery")} size="sm" />
-
-          {/* Desktop navigation */}
+        <div className="flex h-20 items-center justify-center">
+          {/* Desktop navigation - centered */}
           <div className="hidden items-center gap-8 md:flex">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
@@ -83,7 +79,7 @@ export default function Navigation({
           <button
             type="button"
             onClick={onMobileMenuToggle}
-            className="p-2 text-[#1a1817] md:hidden"
+            className="absolute right-4 p-2 text-[#1a1817] md:hidden"
             aria-label={
               mobileMenuOpen ? "Close menu" : "Open menu"
             }

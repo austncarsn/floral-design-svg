@@ -10,34 +10,40 @@ interface StemFourProps {
 export default function StemFour({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88",
-  budColor = "#E64A2E"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0",
+  budColor = "#C97A64"
 }: StemFourProps) {
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stem - perfectly centered */}
-        <rect x="97" y="45" width="6" height="110" fill={stemColor} rx="1" />
+        {/* Main stem - refined */}
+        <rect x="96" y="48" width="8" height="110" fill={stemColor} rx="2" />
         
-        {/* Left branch - perfectly symmetrical */}
-        <path d="M 100 75 Q 85 85 75 105" stroke={stemColor} strokeWidth="4" fill="none" strokeLinecap="round" />
+        {/* Left branch - refined symmetry */}
+        <path d="M 100 78 Q 84 88 74 108" stroke={stemColor} strokeWidth="5" fill="none" strokeLinecap="round" />
         
-        {/* Right branch - perfectly symmetrical */}
-        <path d="M 100 75 Q 115 85 125 105" stroke={stemColor} strokeWidth="4" fill="none" strokeLinecap="round" />
+        {/* Right branch - refined symmetry */}
+        <path d="M 100 78 Q 116 88 126 108" stroke={stemColor} strokeWidth="5" fill="none" strokeLinecap="round" />
         
-        {/* Top bud - centered */}
-        <circle cx="100" cy="45" r="10" fill={budColor} />
+        {/* Top bud - refined with depth */}
+        <circle cx="100" cy="48" r="11" fill={budColor} />
+        <circle cx="100" cy="48" r="5" fill="#E8A594" opacity="0.6" />
         
         {/* Left bud */}
-        <circle cx="75" cy="105" r="8" fill={budColor} />
+        <circle cx="74" cy="108" r="9" fill={budColor} />
+        <circle cx="74" cy="108" r="4" fill="#E8A594" opacity="0.6" />
         
         {/* Right bud */}
-        <circle cx="125" cy="105" r="8" fill={budColor} />
+        <circle cx="126" cy="108" r="9" fill={budColor} />
+        <circle cx="126" cy="108" r="4" fill="#E8A594" opacity="0.6" />
         
-        {/* Bottom leaves - perfectly symmetrical */}
-        <ellipse cx="78" cy="145" rx="26" ry="18" fill={leafColor} transform="rotate(-25 78 145)" />
-        <ellipse cx="122" cy="145" rx="26" ry="18" fill={leafColor} transform="rotate(25 122 145)" />
+        {/* Bottom leaves - refined with highlights */}
+        <ellipse cx="76" cy="145" rx="25" ry="17" fill={leafColor} transform="rotate(-25 76 145)" />
+        <ellipse cx="80" cy="145" rx="14" ry="9" fill="#C4D9C5" opacity="0.5" transform="rotate(-25 80 145)" />
+        
+        <ellipse cx="124" cy="145" rx="25" ry="17" fill={leafColor} transform="rotate(25 124 145)" />
+        <ellipse cx="120" cy="145" rx="14" ry="9" fill="#C4D9C5" opacity="0.5" transform="rotate(25 120 145)" />
       </svg>
     </div>
   );

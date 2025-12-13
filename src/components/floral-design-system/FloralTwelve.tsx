@@ -1,4 +1,4 @@
-// Multi-colored abstract bloom - all colors (perfectly symmetrical)
+// Sophisticated split-circle yin-yang inspired bloom with elegant balance
 interface FloralTwelveProps {
   size?: number;
   className?: string;
@@ -8,27 +8,27 @@ export default function FloralTwelve({
   size = 200,
   className = ""
 }: FloralTwelveProps) {
-  const centerX = 100;
-  const centerY = 100;
-  const radius = 40;
-  const colors = ["#E64A2E", "#4A7C8C", "#F5EFE0"];
-  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* 6 circles in alternating colors at 60-degree intervals */}
-        {[0, 60, 120, 180, 240, 300].map((angle, i) => {
-          const rad = (angle * Math.PI) / 180;
-          const cx = centerX + Math.cos(rad) * radius;
-          const cy = centerY + Math.sin(rad) * radius;
-          return (
-            <circle key={i} cx={cx} cy={cy} r="26" fill={colors[i % 3]} />
-          );
-        })}
+        {/* Main circle - refined teal */}
+        <circle cx="100" cy="100" r="48" fill="#5A8A8A" />
         
-        {/* Center circle */}
-        <circle cx="100" cy="100" r="30" fill="#1A1A1A" />
-        <circle cx="100" cy="100" r="15" fill="#E8663F" />
+        {/* Sophisticated split - cream arc */}
+        <path d="M 52 100 A 48 48 0 0 0 148 100 Z" fill="#E8DCC8" />
+        
+        {/* Secondary accent for depth */}
+        <path d="M 60 100 A 40 40 0 0 0 140 100 Z" fill="#F5EFE0" opacity="0.6" />
+        
+        {/* Upper circle detail - refined coral */}
+        <circle cx="100" cy="76" r="16" fill="#D4866F" />
+        <circle cx="100" cy="76" r="10" fill="#C97A64" />
+        <circle cx="100" cy="76" r="5" fill="#E8DCC8" />
+        
+        {/* Lower circle detail - refined teal */}
+        <circle cx="100" cy="124" r="12" fill="#E8DCC8" />
+        <circle cx="100" cy="124" r="7" fill="#6B8A9B" />
+        <circle cx="100" cy="124" r="3" fill="#5A8A8A" />
       </svg>
     </div>
   );

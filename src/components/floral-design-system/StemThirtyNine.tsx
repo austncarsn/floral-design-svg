@@ -10,40 +10,69 @@ interface StemThirtyNineProps {
 export default function StemThirtyNine({ 
   size = 200,
   className = "",
-  stemColor1 = "#7A8450",
-  stemColor2 = "#9CAF88",
-  leafColor = "#A8C9B8"
+  stemColor1 = "#8A9B7A",
+  stemColor2 = "#9DB5A0",
+  leafColor = "#B4C9BC"
 }: StemThirtyNineProps) {
+  const highlightColor = "#C4D9C5";
+  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Left spiral stem */}
+        {/* Left spiral stem - refined */}
         <path 
-          d="M 80 180 Q 60 140, 80 100 Q 100 60, 80 20" 
+          d="M 78 178 Q 58 138, 78 98 Q 98 58, 78 22" 
           stroke={stemColor1} 
-          strokeWidth="6" 
+          strokeWidth="6.5" 
           fill="none"
           strokeLinecap="round"
         />
-        
-        {/* Right spiral stem */}
         <path 
-          d="M 120 180 Q 140 140, 120 100 Q 100 60, 120 20" 
+          d="M 78 178 Q 58 138, 78 98 Q 98 58, 78 22" 
+          stroke={stemColor1} 
+          strokeWidth="2" 
+          fill="none"
+          strokeLinecap="round"
+          opacity="0.3"
+          transform="translate(0.5, 0.5)"
+        />
+        
+        {/* Right spiral stem - refined */}
+        <path 
+          d="M 122 178 Q 142 138, 122 98 Q 102 58, 122 22" 
           stroke={stemColor2} 
-          strokeWidth="6" 
+          strokeWidth="6.5" 
           fill="none"
           strokeLinecap="round"
         />
+        <path 
+          d="M 122 178 Q 142 138, 122 98 Q 102 58, 122 22" 
+          stroke={stemColor2} 
+          strokeWidth="2" 
+          fill="none"
+          strokeLinecap="round"
+          opacity="0.3"
+          transform="translate(0.5, 0.5)"
+        />
         
-        {/* Leaves at intersection points - alternating */}
-        <ellipse cx="75" cy="150" rx="16" ry="22" fill={leafColor} transform="rotate(-30 75 150)" />
-        <ellipse cx="125" cy="150" rx="16" ry="22" fill={leafColor} transform="rotate(30 125 150)" />
+        {/* Leaves at intersection points - refined with highlights */}
+        <ellipse cx="73" cy="148" rx="17" ry="23" fill={leafColor} transform="rotate(-31 73 148)" />
+        <ellipse cx="76" cy="143" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(-31 76 143)" />
         
-        <ellipse cx="75" cy="100" rx="18" ry="24" fill={leafColor} transform="rotate(-25 75 100)" />
-        <ellipse cx="125" cy="100" rx="18" ry="24" fill={leafColor} transform="rotate(25 125 100)" />
+        <ellipse cx="127" cy="148" rx="17" ry="23" fill={leafColor} transform="rotate(31 127 148)" />
+        <ellipse cx="124" cy="143" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(31 124 143)" />
         
-        <ellipse cx="75" cy="50" rx="16" ry="22" fill={leafColor} transform="rotate(-30 75 50)" />
-        <ellipse cx="125" cy="50" rx="16" ry="22" fill={leafColor} transform="rotate(30 125 50)" />
+        <ellipse cx="73" cy="98" rx="19" ry="25" fill={leafColor} transform="rotate(-26 73 98)" />
+        <ellipse cx="76" cy="93" rx="8" ry="12" fill={highlightColor} opacity="0.5" transform="rotate(-26 76 93)" />
+        
+        <ellipse cx="127" cy="98" rx="19" ry="25" fill={leafColor} transform="rotate(26 127 98)" />
+        <ellipse cx="124" cy="93" rx="8" ry="12" fill={highlightColor} opacity="0.5" transform="rotate(26 124 93)" />
+        
+        <ellipse cx="73" cy="48" rx="17" ry="23" fill={leafColor} transform="rotate(-31 73 48)" />
+        <ellipse cx="76" cy="43" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(-31 76 43)" />
+        
+        <ellipse cx="127" cy="48" rx="17" ry="23" fill={leafColor} transform="rotate(31 127 48)" />
+        <ellipse cx="124" cy="43" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(31 124 43)" />
       </svg>
     </div>
   );

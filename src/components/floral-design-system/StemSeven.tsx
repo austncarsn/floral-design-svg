@@ -9,21 +9,25 @@ interface StemSevenProps {
 export default function StemSeven({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0"
 }: StemSevenProps) {
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stem - perfectly centered */}
-        <rect x="97" y="30" width="6" height="150" fill={stemColor} rx="1" />
+        {/* Main stem - refined */}
+        <rect x="96" y="35" width="8" height="145" fill={stemColor} rx="2" />
         
-        {/* Heart-shaped leaf - perfectly symmetrical */}
-        <path d="M 75 100 Q 65 115 100 155 Q 135 115 125 100 Q 118 92 100 105 Q 82 92 75 100 Z" fill={leafColor} />
+        {/* Heart-shaped leaf - refined with highlight */}
+        <path d="M 78 102 Q 68 116 100 152 Q 132 116 122 102 Q 116 95 100 107 Q 84 95 78 102 Z" fill={leafColor} />
+        <path d="M 88 106 Q 82 114 100 138 Q 118 114 112 106 Q 108 102 100 110 Q 92 102 88 106 Z" fill="#C4D9C5" opacity="0.4" />
         
-        {/* Small top leaves - symmetrical */}
-        <ellipse cx="82" cy="65" rx="22" ry="17" fill={leafColor} transform="rotate(-30 82 65)" />
-        <ellipse cx="118" cy="65" rx="22" ry="17" fill={leafColor} transform="rotate(30 118 65)" />
+        {/* Small top leaves - refined with highlights */}
+        <ellipse cx="80" cy="67" rx="21" ry="16" fill={leafColor} transform="rotate(-30 80 67)" />
+        <ellipse cx="84" cy="67" rx="12" ry="9" fill="#C4D9C5" opacity="0.5" transform="rotate(-30 84 67)" />
+        
+        <ellipse cx="120" cy="67" rx="21" ry="16" fill={leafColor} transform="rotate(30 120 67)" />
+        <ellipse cx="116" cy="67" rx="12" ry="9" fill="#C4D9C5" opacity="0.5" transform="rotate(30 116 67)" />
       </svg>
     </div>
   );

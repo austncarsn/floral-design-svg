@@ -26,17 +26,20 @@ export default function FloralFiftySeven({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Outer hexagon */}
-        <polygon points={createHexagon(centerX, centerY, 65)} fill="#C9604A" />
+        {/* Outer hexagon - refined coral */}
+        <polygon points={createHexagon(centerX, centerY, 58)} fill="#C97A64" />
         
-        {/* Middle hexagon */}
-        <polygon points={createHexagon(centerX, centerY, 48)} fill="#F5EFE0" />
+        {/* Middle hexagon - cream */}
+        <polygon points={createHexagon(centerX, centerY, 44)} fill="#E8DCC8" />
         
-        {/* Inner hexagon */}
-        <polygon points={createHexagon(centerX, centerY, 32)} fill="#7A8450" />
+        {/* Inner hexagon - refined sage */}
+        <polygon points={createHexagon(centerX, centerY, 30)} fill="#8A9B7A" />
         
-        {/* Center hexagon */}
-        <polygon points={createHexagon(centerX, centerY, 16)} fill="#D4A62A" />
+        {/* Center hexagon - refined gold */}
+        <polygon points={createHexagon(centerX, centerY, 16)} fill="#D4A855" />
+        
+        {/* Center dot */}
+        <circle cx={centerX} cy={centerY} r="5" fill="#1A1A1A" />
       </svg>
     </div>
   );

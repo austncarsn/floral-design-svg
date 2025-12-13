@@ -10,13 +10,13 @@ export default function FloralFiftyNine({
 }: FloralFiftyNineProps) {
   const centerX = 100;
   const centerY = 100;
-  const radius = 30;
+  const radius = 27;
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Center circle */}
-        <circle cx={centerX} cy={centerY} r={radius} fill="#9CAF88" />
+        {/* Center circle - refined sage */}
+        <circle cx={centerX} cy={centerY} r={radius} fill="#8A9B7A" />
         
         {/* 6 overlapping circles at 60-degree intervals */}
         {[0, 60, 120, 180, 240, 300].map((angle, i) => {
@@ -30,15 +30,16 @@ export default function FloralFiftyNine({
               cx={cx} 
               cy={cy} 
               r={radius} 
-              fill={i % 2 === 0 ? "#A8C9B8" : "#9CAF88"}
-              opacity="0.8"
+              fill={i % 2 === 0 ? "#9DB5A0" : "#8A9B7A"}
+              opacity="0.85"
             />
           );
         })}
         
-        {/* Center overlay circles for definition */}
-        <circle cx={centerX} cy={centerY} r={radius} fill="none" stroke="#7A8450" strokeWidth="2" />
-        <circle cx={centerX} cy={centerY} r="16" fill="#F2A818" />
+        {/* Center overlay for definition */}
+        <circle cx={centerX} cy={centerY} r={radius} fill="none" stroke="#5A8A8A" strokeWidth="2" />
+        <circle cx={centerX} cy={centerY} r="15" fill="#D4A855" />
+        <circle cx={centerX} cy={centerY} r="5" fill="#1A1A1A" />
       </svg>
     </div>
   );

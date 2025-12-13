@@ -1,4 +1,4 @@
-// Mint green clover with deep teal center (perfectly symmetrical)
+// Sophisticated four-petal modernist bloom with golden accents
 interface FloralSixteenProps {
   size?: number;
   className?: string;
@@ -11,14 +11,24 @@ export default function FloralSixteen({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* 4 petal clover at 90-degree intervals */}
-        <circle cx="100" cy="62" r="30" fill="#A8C9B8" />
-        <circle cx="138" cy="100" r="30" fill="#A8C9B8" />
-        <circle cx="100" cy="138" r="30" fill="#A8C9B8" />
-        <circle cx="62" cy="100" r="30" fill="#A8C9B8" />
+        {/* Four mustard petals - cardinal directions */}
+        <ellipse cx="100" cy="65" rx="26" ry="38" fill="#D4A855" />
+        <ellipse cx="135" cy="100" rx="38" ry="26" fill="#D4A855" />
+        <ellipse cx="100" cy="135" rx="26" ry="38" fill="#D4A855" />
+        <ellipse cx="65" cy="100" rx="38" ry="26" fill="#D4A855" />
         
-        {/* Center */}
-        <circle cx="100" cy="100" r="22" fill="#2F5B6B" />
+        {/* Subtle highlights */}
+        <ellipse cx="100" cy="68" rx="17" ry="26" fill="#C9A15C" opacity="0.6" />
+        <ellipse cx="132" cy="100" rx="26" ry="17" fill="#C9A15C" opacity="0.6" />
+        <ellipse cx="100" cy="132" rx="17" ry="26" fill="#C9A15C" opacity="0.6" />
+        <ellipse cx="68" cy="100" rx="26" ry="17" fill="#C9A15C" opacity="0.6" />
+        
+        {/* Layered center */}
+        <circle cx="100" cy="100" r="30" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="22" fill="#3A3A3A" />
+        <circle cx="100" cy="100" r="15" fill="#E8DCC8" />
+        <circle cx="100" cy="100" r="8" fill="#D4A855" />
+        <circle cx="100" cy="100" r="3" fill="#1A1A1A" />
       </svg>
     </div>
   );

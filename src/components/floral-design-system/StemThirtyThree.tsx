@@ -10,39 +10,70 @@ interface StemThirtyThreeProps {
 export default function StemThirtyThree({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88",
-  berryColor = "#C9604A"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0",
+  berryColor = "#C9765A"
 }: StemThirtyThreeProps) {
+  const highlightColor = "#C4D9C5";
+  const berryHighlight = "#D99682";
+  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stem */}
-        <rect x="97" y="30" width="6" height="150" fill={stemColor} rx="1" />
+        <defs>
+          {/* Gradients for depth */}
+          <radialGradient id="berryGrad33" cx="35%" cy="35%">
+            <stop offset="0%" stopColor={berryHighlight} stopOpacity="1" />
+            <stop offset="60%" stopColor={berryColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={berryColor} stopOpacity="0.85" />
+          </radialGradient>
+        </defs>
         
-        {/* Left branch */}
-        <rect x="62" y="82" width="4" height="40" fill={stemColor} rx="1" transform="rotate(-35 64 82)" />
+        {/* Main stem - refined */}
+        <rect x="96.5" y="30" width="7" height="153" fill={stemColor} rx="3.5" />
+        <rect x="97.5" y="30" width="2" height="153" fill={stemColor} opacity="0.6" />
         
-        {/* Right branch */}
-        <rect x="134" y="82" width="4" height="40" fill={stemColor} rx="1" transform="rotate(35 136 82)" />
+        {/* Left branch - refined */}
+        <rect x="60" y="80" width="5" height="42" fill={stemColor} rx="2.5" transform="rotate(-36 62 80)" />
+        <rect x="61" y="80" width="2" height="42" fill={stemColor} opacity="0.5" transform="rotate(-36 62 80)" />
         
-        {/* Left leaf cluster */}
-        <ellipse cx="55" cy="95" rx="16" ry="22" fill={leafColor} transform="rotate(-25 55 95)" />
-        <ellipse cx="48" cy="110" rx="14" ry="20" fill={leafColor} transform="rotate(-35 48 110)" />
+        {/* Right branch - refined */}
+        <rect x="135" y="80" width="5" height="42" fill={stemColor} rx="2.5" transform="rotate(36 137 80)" />
+        <rect x="136" y="80" width="2" height="42" fill={stemColor} opacity="0.5" transform="rotate(36 137 80)" />
         
-        {/* Right leaf cluster */}
-        <ellipse cx="145" cy="95" rx="16" ry="22" fill={leafColor} transform="rotate(25 145 95)" />
-        <ellipse cx="152" cy="110" rx="14" ry="20" fill={leafColor} transform="rotate(35 152 110)" />
+        {/* Left leaf cluster - refined with highlights */}
+        <ellipse cx="53" cy="93" rx="17" ry="23" fill={leafColor} transform="rotate(-26 53 93)" />
+        <ellipse cx="56" cy="88" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(-26 56 88)" />
         
-        {/* Center leaves */}
-        <ellipse cx="70" cy="140" rx="20" ry="28" fill={leafColor} transform="rotate(-20 70 140)" />
-        <ellipse cx="130" cy="140" rx="20" ry="28" fill={leafColor} transform="rotate(20 130 140)" />
+        <ellipse cx="46" cy="108" rx="15" ry="21" fill={leafColor} transform="rotate(-36 46 108)" />
+        <ellipse cx="49" cy="103" rx="6" ry="10" fill={highlightColor} opacity="0.5" transform="rotate(-36 49 103)" />
         
-        {/* Berries on branches */}
-        <circle cx="50" cy="100" r="5" fill={berryColor} />
-        <circle cx="150" cy="100" r="5" fill={berryColor} />
-        <circle cx="45" cy="115" r="4" fill={berryColor} />
-        <circle cx="155" cy="115" r="4" fill={berryColor} />
+        {/* Right leaf cluster - refined with highlights */}
+        <ellipse cx="147" cy="93" rx="17" ry="23" fill={leafColor} transform="rotate(26 147 93)" />
+        <ellipse cx="144" cy="88" rx="7" ry="11" fill={highlightColor} opacity="0.5" transform="rotate(26 144 88)" />
+        
+        <ellipse cx="154" cy="108" rx="15" ry="21" fill={leafColor} transform="rotate(36 154 108)" />
+        <ellipse cx="151" cy="103" rx="6" ry="10" fill={highlightColor} opacity="0.5" transform="rotate(36 151 103)" />
+        
+        {/* Center leaves - refined with highlights */}
+        <ellipse cx="68" cy="138" rx="21" ry="29" fill={leafColor} transform="rotate(-21 68 138)" />
+        <ellipse cx="71" cy="132" rx="9" ry="13" fill={highlightColor} opacity="0.5" transform="rotate(-21 71 132)" />
+        
+        <ellipse cx="132" cy="138" rx="21" ry="29" fill={leafColor} transform="rotate(21 132 138)" />
+        <ellipse cx="129" cy="132" rx="9" ry="13" fill={highlightColor} opacity="0.5" transform="rotate(21 129 132)" />
+        
+        {/* Berries on branches - refined with highlights */}
+        <circle cx="48" cy="98" r="6" fill="url(#berryGrad33)" />
+        <circle cx="50" cy="96" r="2" fill={berryHighlight} opacity="0.8" />
+        
+        <circle cx="152" cy="98" r="6" fill="url(#berryGrad33)" />
+        <circle cx="150" cy="96" r="2" fill={berryHighlight} opacity="0.8" />
+        
+        <circle cx="43" cy="113" r="5" fill="url(#berryGrad33)" />
+        <circle cx="45" cy="111" r="1.5" fill={berryHighlight} opacity="0.8" />
+        
+        <circle cx="157" cy="113" r="5" fill="url(#berryGrad33)" />
+        <circle cx="155" cy="111" r="1.5" fill={berryHighlight} opacity="0.8" />
       </svg>
     </div>
   );

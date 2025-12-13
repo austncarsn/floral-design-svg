@@ -8,6 +8,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Windsor";
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Tailwind @custom-variant for dark mode */
 @custom-variant dark (&:is(.dark *));
 
@@ -214,26 +221,30 @@
   inset-inline: 0;
   z-index: 50;
   background: var(--color-bg-nav); /* pastel pink shell */
+  /* No padding-bottom - scallops extend beyond */
   padding-bottom: 0;
+  overflow: visible;
   transition: box-shadow var(--transition-base), background-color var(--transition-base);
 }
 
+/* Scalloped edge as decorative layer - extends below the nav */
 .nav-bar::after {
   position: absolute;
-  inset-inline: 0;
-  bottom: calc(-1 * 50px);
+  left: 0;
+  right: 0;
+  bottom: -32px; /* Scallops extend 32px below the nav bar */
   content: "";
-  height: 50px;
-  background: radial-gradient(
-    circle at 50% 0,
-    var(--color-bg-nav) 25%,
-    transparent 26%,
-    transparent 40%
+  height: 32px;
+  background-image: radial-gradient(
+    circle at 32px 0,
+    var(--color-bg-nav) 32px,
+    transparent 32px
   );
-  background-color: transparent;
-  background-size: 50px calc(50px * 2);
+  background-size: 64px 32px;
+  background-position: 0 0; /* Start aligned, no offset */
   background-repeat: repeat-x;
   pointer-events: none;
+  z-index: -1;
 }
 
 .nav-bar.scrolled {

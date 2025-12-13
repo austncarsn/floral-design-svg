@@ -1,4 +1,4 @@
-// Lavender and rose layered squares (perfectly symmetrical)
+// Sophisticated nested diamond mandala with lavender, mauve, and sage
 interface FloralFortyOneProps {
   size?: number;
   className?: string;
@@ -11,23 +11,57 @@ export default function FloralFortyOne({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Outer rotated square - lavender (45° rotation) */}
-        <rect x="29.3" y="29.3" width="141.4" height="141.4" fill="#B8A9C9" transform="rotate(45 100 100)" />
+        {/* Outer rotated square - refined lavender */}
+        <rect 
+          x="42" 
+          y="42" 
+          width="116" 
+          height="116" 
+          fill="#C4ADB8" 
+          transform="rotate(45 100 100)" 
+        />
         
-        {/* Second rotated square - dusty rose */}
-        <rect x="50" y="50" width="100" height="100" fill="#C9858D" transform="rotate(45 100 100)" />
+        {/* Outer square highlight */}
+        <rect 
+          x="50" 
+          y="50" 
+          width="100" 
+          height="100" 
+          fill="#D4C4E0" 
+          opacity="0.5"
+          transform="rotate(45 100 100)" 
+        />
+        
+        {/* Second rotated square - refined mauve */}
+        <rect 
+          x="60" 
+          y="60" 
+          width="80" 
+          height="80" 
+          fill="#C9A5AE" 
+          transform="rotate(45 100 100)" 
+        />
         
         {/* Third rotated square - cream */}
-        <rect x="70.7" y="70.7" width="58.6" height="58.6" fill="#F5EFE0" transform="rotate(45 100 100)" />
+        <rect 
+          x="75" 
+          y="75" 
+          width="50" 
+          height="50" 
+          fill="#E8DCC8" 
+          transform="rotate(45 100 100)" 
+        />
         
-        {/* Center circle - olive */}
-        <circle cx="100" cy="100" r="18" fill="#7A8450" />
+        {/* Layered center - sage */}
+        <circle cx="100" cy="100" r="18" fill="#8A9B7A" />
+        <circle cx="100" cy="100" r="10" fill="#9DB5A0" />
+        <circle cx="100" cy="100" r="4" fill="#E8DCC8" />
         
-        {/* Four corner dots at cardinal points - black */}
-        <circle cx="100" cy="40" r="7" fill="#1A1A1A" />
-        <circle cx="160" cy="100" r="7" fill="#1A1A1A" />
-        <circle cx="100" cy="160" r="7" fill="#1A1A1A" />
-        <circle cx="40" cy="100" r="7" fill="#1A1A1A" />
+        {/* Four corner dots - cardinal points */}
+        <circle cx="100" cy="52" r="7" fill="#1A1A1A" />
+        <circle cx="148" cy="100" r="7" fill="#1A1A1A" />
+        <circle cx="100" cy="148" r="7" fill="#1A1A1A" />
+        <circle cx="52" cy="100" r="7" fill="#1A1A1A" />
       </svg>
     </div>
   );

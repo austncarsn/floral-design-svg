@@ -9,28 +9,29 @@ interface StemSixProps {
 export default function StemSix({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0"
 }: StemSixProps) {
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stem - perfectly centered */}
-        <rect x="97" y="30" width="6" height="150" fill={stemColor} rx="1" />
+        {/* Main stem - refined */}
+        <rect x="96" y="35" width="8" height="145" fill={stemColor} rx="2" />
         
-        {/* Single large centered leaf */}
-        <ellipse cx="100" cy="100" rx="50" ry="38" fill={leafColor} />
+        {/* Single large centered leaf with highlight */}
+        <ellipse cx="100" cy="102" rx="46" ry="35" fill={leafColor} />
+        <ellipse cx="100" cy="95" rx="32" ry="23" fill="#C4D9C5" opacity="0.4" />
         
-        {/* Leaf center vein */}
-        <line x1="100" y1="65" x2="100" y2="135" stroke={stemColor} strokeWidth="2.5" />
+        {/* Leaf center vein - refined */}
+        <line x1="100" y1="70" x2="100" y2="134" stroke={stemColor} strokeWidth="3" />
         
-        {/* Side veins - symmetrical */}
-        <line x1="100" y1="80" x2="80" y2="90" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
-        <line x1="100" y1="80" x2="120" y2="90" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
-        <line x1="100" y1="100" x2="75" y2="110" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
-        <line x1="100" y1="100" x2="125" y2="110" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
-        <line x1="100" y1="120" x2="82" y2="125" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
-        <line x1="100" y1="120" x2="118" y2="125" stroke={stemColor} strokeWidth="1.5" opacity="0.6" />
+        {/* Side veins - refined symmetry */}
+        <line x1="100" y1="82" x2="78" y2="92" stroke={stemColor} strokeWidth="2" opacity="0.5" />
+        <line x1="100" y1="82" x2="122" y2="92" stroke={stemColor} strokeWidth="2" opacity="0.5" />
+        <line x1="100" y1="102" x2="72" y2="112" stroke={stemColor} strokeWidth="2" opacity="0.5" />
+        <line x1="100" y1="102" x2="128" y2="112" stroke={stemColor} strokeWidth="2" opacity="0.5" />
+        <line x1="100" y1="120" x2="80" y2="126" stroke={stemColor} strokeWidth="2" opacity="0.5" />
+        <line x1="100" y1="120" x2="120" y2="126" stroke={stemColor} strokeWidth="2" opacity="0.5" />
       </svg>
     </div>
   );

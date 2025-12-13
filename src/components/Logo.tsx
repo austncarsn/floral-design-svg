@@ -1,6 +1,3 @@
-// Import can be removed if you no longer use FloralThirtyTwo elsewhere
-// import FloralThirtyTwo from "./floral-design-system/FloralThirtyTwo";
-
 interface LogoProps {
   onClick?: () => void;
   size?: "sm" | "md" | "lg";
@@ -26,20 +23,6 @@ export default function Logo({
   const centerX = 100;
   const centerY = 100;
   const radius = 42;
-
-  // Pastel floral palette tuned to the nav pink and warm paper background
-  const colors = [
-    "#FDE6F0", // nav pastel pink
-    "#F8CFDC", // blush rose
-    "#F5B4C9", // soft rose
-    "#F3DDC7", // warm sand
-    "#F6E8D9", // champagne
-    "#E3D8F4", // soft lavender
-    "#D5C2EB", // lilac
-    "#D4E5E9", // mist blue gray
-    "#CDDDCF", // sage gray
-    "#B89684", // soft cocoa anchor
-  ];
 
   const Component = onClick ? "button" : "div";
 
@@ -67,27 +50,28 @@ export default function Logo({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* 10 petals in pastel ring */}
-          {Array.from({ length: 10 }, (_, i) => i * 36).map(
-            (angle, i) => {
-              const rad = (angle * Math.PI) / 180;
-              const cx = centerX + Math.cos(rad) * radius;
-              const cy = centerY + Math.sin(rad) * radius;
-              return (
-                <circle
-                  key={i}
-                  cx={cx}
-                  cy={cy}
-                  r="22"
-                  fill={colors[i]}
-                />
-              );
-            },
-          )}
-
-          {/* Center: matches paper and primary text tokens */}
-          <circle cx="100" cy="100" r="26" fill="#F6E8D9" />
-          <circle cx="100" cy="100" r="14" fill="#1A1817" />
+          {/* Simple boxed AC logo */}
+          <rect
+            x="40"
+            y="60"
+            width="120"
+            height="80"
+            rx="8"
+            fill="none"
+            stroke="#1a1a1a"
+            strokeWidth="3"
+          />
+          <text
+            x="100"
+            y="115"
+            textAnchor="middle"
+            fill="#1a1a1a"
+            fontSize="48"
+            fontWeight="600"
+            fontFamily="Plus Jakarta Sans, sans-serif"
+          >
+            AC
+          </text>
         </svg>
       </div>
     </Component>

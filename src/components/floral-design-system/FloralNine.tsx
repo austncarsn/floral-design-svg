@@ -1,4 +1,4 @@
-// Black and cream striped flower - modern geometric (perfectly symmetrical)
+// Modern geometric cross bloom with sophisticated depth and layering
 interface FloralNineProps {
   size?: number;
   className?: string;
@@ -12,22 +12,33 @@ export default function FloralNine({
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <clipPath id="circleClip">
-            <circle cx="100" cy="100" r="50" />
+          <clipPath id="circleClip9">
+            <circle cx="100" cy="100" r="48" />
           </clipPath>
         </defs>
         
-        {/* Base circle */}
-        <circle cx="100" cy="100" r="50" fill="#1A1A1A" />
+        {/* Base circle with gradient effect */}
+        <circle cx="100" cy="100" r="48" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="48" fill="#3A3A3A" opacity="0.2" />
         
-        {/* Cream cross pattern */}
-        <g clipPath="url(#circleClip)">
-          <rect x="92" y="50" width="16" height="100" fill="#F5EFE0" />
-          <rect x="50" y="92" width="100" height="16" fill="#F5EFE0" />
+        {/* Sophisticated cross pattern with layers */}
+        <g clipPath="url(#circleClip9)">
+          {/* Main cross */}
+          <rect x="91" y="52" width="18" height="96" fill="#F5EFE0" rx="2" />
+          <rect x="52" y="91" width="96" height="18" fill="#F5EFE0" rx="2" />
+          
+          {/* Inner cross highlight */}
+          <rect x="95" y="52" width="10" height="96" fill="#E8DCC8" opacity="0.6" />
+          <rect x="52" y="95" width="96" height="10" fill="#E8DCC8" opacity="0.6" />
         </g>
         
-        {/* Border */}
-        <circle cx="100" cy="100" r="50" fill="none" stroke="#1A1A1A" strokeWidth="2" />
+        {/* Center focal point */}
+        <rect x="91" y="91" width="18" height="18" fill="#D4866F" rx="2" />
+        <rect x="95" y="95" width="10" height="10" fill="#C97A64" rx="1" />
+        
+        {/* Refined border */}
+        <circle cx="100" cy="100" r="48" fill="none" stroke="#1A1A1A" strokeWidth="2.5" />
+        <circle cx="100" cy="100" r="45" fill="none" stroke="#E8DCC8" strokeWidth="1" opacity="0.4" />
       </svg>
     </div>
   );

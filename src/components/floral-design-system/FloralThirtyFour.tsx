@@ -1,4 +1,4 @@
-// Golden yellow 8-pointed star (perfectly symmetrical)
+// Sophisticated 8-pointed star with golden and teal layering
 interface FloralThirtyFourProps {
   size?: number;
   className?: string;
@@ -11,15 +11,30 @@ export default function FloralThirtyFour({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Eight-pointed star - golden yellow (mathematically precise 45° rotation) */}
         <g transform="translate(100, 100)">
-          <path d="M 0 -60 L 8 -25 L 42 -42 L 25 -8 L 60 0 L 25 8 L 42 42 L 8 25 L 0 60 L -8 25 L -42 42 L -25 8 L -60 0 L -25 -8 L -42 -42 L -8 -25 Z" fill="#F2A818" />
+          {/* Eight-pointed star - refined golden */}
+          <path 
+            d="M 0 -56 L 7.5 -23 L 40 -40 L 23 -7.5 L 56 0 L 23 7.5 L 40 40 L 7.5 23 L 0 56 L -7.5 23 L -40 40 L -23 7.5 L -56 0 L -23 -7.5 L -40 -40 L -7.5 -23 Z" 
+            fill="#D4A855" 
+          />
           
-          {/* Inner star - deep teal */}
-          <path d="M 0 -35 L 5 -15 L 25 -25 L 15 -5 L 35 0 L 15 5 L 25 25 L 5 15 L 0 35 L -5 15 L -25 25 L -15 5 L -35 0 L -15 -5 L -25 -25 L -5 -15 Z" fill="#2F5B6B" />
+          {/* Mid star highlight */}
+          <path 
+            d="M 0 -44 L 6 -18 L 31 -31 L 18 -6 L 44 0 L 18 6 L 31 31 L 6 18 L 0 44 L -6 18 L -31 31 L -18 6 L -44 0 L -18 -6 L -31 -31 L -6 -18 Z" 
+            fill="#C9A15C" 
+            opacity="0.6"
+          />
           
-          {/* Center circle - cream */}
-          <circle cx="0" cy="0" r="15" fill="#F5EFE0" />
+          {/* Inner star - refined teal */}
+          <path 
+            d="M 0 -32 L 5 -13 L 23 -23 L 13 -5 L 32 0 L 13 5 L 23 23 L 5 13 L 0 32 L -5 13 L -23 23 L -13 5 L -32 0 L -13 -5 L -23 -23 L -5 -13 Z" 
+            fill="#5A8A8A" 
+          />
+          
+          {/* Layered center */}
+          <circle cx="0" cy="0" r="16" fill="#E8DCC8" />
+          <circle cx="0" cy="0" r="9" fill="#D4A855" />
+          <circle cx="0" cy="0" r="4" fill="#5A8A8A" />
         </g>
       </svg>
     </div>

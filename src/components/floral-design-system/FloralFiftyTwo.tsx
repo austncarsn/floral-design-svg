@@ -13,26 +13,30 @@ export default function FloralFiftyTwo({
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(100, 100)">
           {/* Four curved blades in perfect 90° spacing */}
-          {/* Blade 1 - olive */}
-          <path d="M 0 0 Q -20 -50 0 -70 Q 20 -50 0 0 Z" fill="#7A8450" />
+          {/* Blade 1 - refined sage/olive */}
+          <path d="M 0 0 Q -18 -46 0 -62 Q 18 -46 0 0 Z" fill="#8A9B7A" />
+          <path d="M 0 0 Q -12 -38 0 -50 Q 12 -38 0 0 Z" fill="#9DB5A0" opacity="0.6" />
           
-          {/* Blade 2 - burnt orange */}
-          <path d="M 0 0 Q 50 -20 70 0 Q 50 20 0 0 Z" fill="#D47647" />
+          {/* Blade 2 - refined coral */}
+          <path d="M 0 0 Q 46 -18 62 0 Q 46 18 0 0 Z" fill="#C97A64" />
+          <path d="M 0 0 Q 38 -12 50 0 Q 38 12 0 0 Z" fill="#E8A594" opacity="0.6" />
           
-          {/* Blade 3 - olive */}
-          <path d="M 0 0 Q 20 50 0 70 Q -20 50 0 0 Z" fill="#7A8450" />
+          {/* Blade 3 - refined sage/olive */}
+          <path d="M 0 0 Q 18 46 0 62 Q -18 46 0 0 Z" fill="#8A9B7A" />
+          <path d="M 0 0 Q 12 38 0 50 Q -12 38 0 0 Z" fill="#9DB5A0" opacity="0.6" />
           
-          {/* Blade 4 - burnt orange */}
-          <path d="M 0 0 Q -50 20 -70 0 Q -50 -20 0 0 Z" fill="#D47647" />
+          {/* Blade 4 - refined coral */}
+          <path d="M 0 0 Q -46 18 -62 0 Q -46 -18 0 0 Z" fill="#C97A64" />
+          <path d="M 0 0 Q -38 12 -50 0 Q -38 -12 0 0 Z" fill="#E8A594" opacity="0.6" />
           
-          {/* Center circle - mint green */}
-          <circle cx="0" cy="0" r="30" fill="#A8C9B8" />
+          {/* Center circle - refined sage */}
+          <circle cx="0" cy="0" r="26" fill="#9DB5A0" />
           
-          {/* Inner circle - lavender */}
-          <circle cx="0" cy="0" r="18" fill="#B8A9C9" />
+          {/* Inner circle - refined lavender */}
+          <circle cx="0" cy="0" r="17" fill="#C4ADB8" />
           
-          {/* Center dot - black */}
-          <circle cx="0" cy="0" r="8" fill="#1A1A1A" />
+          {/* Center dot - refined dark */}
+          <circle cx="0" cy="0" r="7" fill="#1A1A1A" />
         </g>
       </svg>
     </div>

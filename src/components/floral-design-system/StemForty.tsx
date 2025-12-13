@@ -10,44 +10,71 @@ interface StemFortyProps {
 export default function StemForty({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor1 = "#9CAF88",
-  leafColor2 = "#A8C9B8"
+  stemColor = "#8A9B7A",
+  leafColor1 = "#9DB5A0",
+  leafColor2 = "#B4C9BC"
 }: StemFortyProps) {
+  const highlightColor = "#C4D9C5";
+  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stems from base */}
-        <rect x="97" y="140" width="6" height="40" fill={stemColor} rx="1" />
+        <defs>
+          {/* Radial gradients for tropical leaves */}
+          <radialGradient id="leafGrad40a" cx="50%" cy="40%">
+            <stop offset="0%" stopColor={highlightColor} stopOpacity="0.85" />
+            <stop offset="50%" stopColor={leafColor1} stopOpacity="1" />
+            <stop offset="100%" stopColor={leafColor1} stopOpacity="0.9" />
+          </radialGradient>
+          <radialGradient id="leafGrad40b" cx="50%" cy="40%">
+            <stop offset="0%" stopColor={highlightColor} stopOpacity="0.9" />
+            <stop offset="50%" stopColor={leafColor2} stopOpacity="1" />
+            <stop offset="100%" stopColor={leafColor2} stopOpacity="0.9" />
+          </radialGradient>
+        </defs>
         
-        {/* Left leaf stem */}
-        <rect x="55" y="90" width="5" height="70" fill={stemColor} rx="1" transform="rotate(-25 57 90)" />
+        {/* Main stem from base - refined */}
+        <rect x="96.5" y="140" width="7" height="43" fill={stemColor} rx="3.5" />
+        <rect x="97.5" y="140" width="2" height="43" fill={stemColor} opacity="0.6" />
         
-        {/* Right leaf stem */}
-        <rect x="140" y="90" width="5" height="70" fill={stemColor} rx="1" transform="rotate(25 142 90)" />
+        {/* Left leaf stem - refined */}
+        <rect x="53" y="88" width="6" height="72" fill={stemColor} rx="3" transform="rotate(-26 56 88)" />
+        <rect x="54" y="88" width="2" height="72" fill={stemColor} opacity="0.5" transform="rotate(-26 56 88)" />
         
-        {/* Center leaf stem */}
-        <rect x="97" y="50" width="6" height="90" fill={stemColor} rx="1" />
+        {/* Right leaf stem - refined */}
+        <rect x="141" y="88" width="6" height="72" fill={stemColor} rx="3" transform="rotate(26 144 88)" />
+        <rect x="142" y="88" width="2" height="72" fill={stemColor} opacity="0.5" transform="rotate(26 144 88)" />
         
-        {/* Center leaf - tallest */}
-        <ellipse cx="100" cy="45" rx="35" ry="55" fill={leafColor1} />
+        {/* Center leaf stem - refined */}
+        <rect x="96.5" y="50" width="7" height="93" fill={stemColor} rx="3.5" />
+        <rect x="97.5" y="50" width="2" height="93" fill={stemColor} opacity="0.6" />
         
-        {/* Left leaf */}
-        <ellipse cx="45" cy="70" rx="32" ry="50" fill={leafColor2} transform="rotate(-20 45 70)" />
+        {/* Center leaf - tallest with gradient */}
+        <ellipse cx="100" cy="43" rx="36" ry="57" fill="url(#leafGrad40a)" />
+        <ellipse cx="100" cy="43" rx="36" ry="57" fill="none" stroke={leafColor1} strokeWidth="1" opacity="0.2" />
         
-        {/* Right leaf */}
-        <ellipse cx="155" cy="70" rx="32" ry="50" fill={leafColor2} transform="rotate(20 155 70)" />
+        {/* Left leaf - with gradient */}
+        <ellipse cx="43" cy="68" rx="33" ry="52" fill="url(#leafGrad40b)" transform="rotate(-21 43 68)" />
+        <ellipse cx="43" cy="68" rx="33" ry="52" fill="none" stroke={leafColor2} strokeWidth="1" opacity="0.2" transform="rotate(-21 43 68)" />
         
-        {/* Mid-left leaf */}
-        <ellipse cx="70" cy="95" rx="28" ry="45" fill={leafColor1} transform="rotate(-15 70 95)" />
+        {/* Right leaf - with gradient */}
+        <ellipse cx="157" cy="68" rx="33" ry="52" fill="url(#leafGrad40b)" transform="rotate(21 157 68)" />
+        <ellipse cx="157" cy="68" rx="33" ry="52" fill="none" stroke={leafColor2} strokeWidth="1" opacity="0.2" transform="rotate(21 157 68)" />
         
-        {/* Mid-right leaf */}
-        <ellipse cx="130" cy="95" rx="28" ry="45" fill={leafColor1} transform="rotate(15 130 95)" />
+        {/* Mid-left leaf - with gradient */}
+        <ellipse cx="68" cy="93" rx="29" ry="47" fill="url(#leafGrad40a)" transform="rotate(-16 68 93)" />
+        <ellipse cx="68" cy="93" rx="29" ry="47" fill="none" stroke={leafColor1} strokeWidth="1" opacity="0.2" transform="rotate(-16 68 93)" />
         
-        {/* Leaf veins for detail */}
-        <line x1="100" y1="25" x2="100" y2="65" stroke={stemColor} strokeWidth="2" opacity="0.3" />
-        <line x1="45" y1="50" x2="45" y2="90" stroke={stemColor} strokeWidth="2" opacity="0.3" />
-        <line x1="155" y1="50" x2="155" y2="90" stroke={stemColor} strokeWidth="2" opacity="0.3" />
+        {/* Mid-right leaf - with gradient */}
+        <ellipse cx="132" cy="93" rx="29" ry="47" fill="url(#leafGrad40a)" transform="rotate(16 132 93)" />
+        <ellipse cx="132" cy="93" rx="29" ry="47" fill="none" stroke={leafColor1} strokeWidth="1" opacity="0.2" transform="rotate(16 132 93)" />
+        
+        {/* Leaf veins for detail - refined */}
+        <line x1="100" y1="23" x2="100" y2="63" stroke={stemColor} strokeWidth="2.5" opacity="0.35" />
+        <line x1="100" y1="23" x2="100" y2="63" stroke={stemColor} strokeWidth="1" opacity="0.2" />
+        
+        <line x1="43" y1="48" x2="43" y2="88" stroke={stemColor} strokeWidth="2.5" opacity="0.35" transform="rotate(-21 43 68)" />
+        <line x1="157" y1="48" x2="157" y2="88" stroke={stemColor} strokeWidth="2.5" opacity="0.35" transform="rotate(21 157 68)" />
       </svg>
     </div>
   );

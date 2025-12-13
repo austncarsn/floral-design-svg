@@ -9,23 +9,31 @@ interface StemElevenProps {
 export default function StemEleven({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0"
 }: StemElevenProps) {
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main drooping stem - centered with graceful curve */}
-        <path d="M 100 20 Q 100 80 92 130 Q 88 155 85 180" stroke={stemColor} strokeWidth="5" fill="none" strokeLinecap="round" />
+        {/* Main drooping stem - refined curve */}
+        <path d="M 100 25 Q 100 82 92 132 Q 88 156 86 175" stroke={stemColor} strokeWidth="6" fill="none" strokeLinecap="round" />
         
-        {/* Drooping leaves - progressively angled */}
-        <ellipse cx="98" cy="75" rx="28" ry="13" fill={leafColor} transform="rotate(-15 98 75)" />
-        <ellipse cx="93" cy="110" rx="26" ry="12" fill={leafColor} transform="rotate(-25 93 110)" />
-        <ellipse cx="88" cy="145" rx="24" ry="12" fill={leafColor} transform="rotate(-35 88 145)" />
+        {/* Drooping leaves - refined with highlights */}
+        <ellipse cx="98" cy="77" rx="26" ry="12" fill={leafColor} transform="rotate(-15 98 77)" />
+        <ellipse cx="102" cy="77" rx="14" ry="7" fill="#C4D9C5" opacity="0.5" transform="rotate(-15 102 77)" />
         
-        {/* Additional leaves for balance */}
-        <ellipse cx="108" cy="55" rx="24" ry="11" fill={leafColor} transform="rotate(10 108 55)" />
-        <ellipse cx="103" cy="90" rx="22" ry="11" fill={leafColor} transform="rotate(5 103 90)" />
+        <ellipse cx="93" cy="112" rx="24" ry="11" fill={leafColor} transform="rotate(-25 93 112)" />
+        <ellipse cx="97" cy="112" rx="13" ry="6" fill="#C4D9C5" opacity="0.5" transform="rotate(-25 97 112)" />
+        
+        <ellipse cx="88" cy="146" rx="22" ry="11" fill={leafColor} transform="rotate(-35 88 146)" />
+        <ellipse cx="92" cy="146" rx="12" ry="6" fill="#C4D9C5" opacity="0.5" transform="rotate(-35 92 146)" />
+        
+        {/* Additional leaves - refined */}
+        <ellipse cx="108" cy="57" rx="22" ry="10" fill={leafColor} transform="rotate(10 108 57)" />
+        <ellipse cx="112" cy="57" rx="12" ry="6" fill="#C4D9C5" opacity="0.5" transform="rotate(10 112 57)" />
+        
+        <ellipse cx="103" cy="92" rx="20" ry="10" fill={leafColor} transform="rotate(5 103 92)" />
+        <ellipse cx="107" cy="92" rx="11" ry="6" fill="#C4D9C5" opacity="0.5" transform="rotate(5 107 92)" />
       </svg>
     </div>
   );

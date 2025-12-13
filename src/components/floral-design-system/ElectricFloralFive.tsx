@@ -4,6 +4,11 @@ interface Props {
 }
 
 export default function ElectricFloralFive({ size = 200, className = "" }: Props) {
+  const primaryColor = "#7A9B9E"; // Muted teal
+  const secondaryColor = "#A88DAA"; // Soft lavender  
+  const accentColor = "#D4A573"; // Warm mustard
+  const highlightColor = "#E8D5C4"; // Creamy neutral
+  
   return (
     <svg
       width={size}
@@ -13,9 +18,22 @@ export default function ElectricFloralFive({ size = 200, className = "" }: Props
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Technical orbital pattern - Monochrome */}
+      <defs>
+        <radialGradient id="nucleus5" cx="50%" cy="50%">
+          <stop offset="0%" stopColor="#8AABAE" stopOpacity="1" />
+          <stop offset="70%" stopColor={primaryColor} stopOpacity="0.95" />
+          <stop offset="100%" stopColor={primaryColor} stopOpacity="0.85" />
+        </radialGradient>
+        <radialGradient id="nodeGrad5" cx="35%" cy="35%">
+          <stop offset="0%" stopColor="#B89DBA" stopOpacity="1" />
+          <stop offset="70%" stopColor={secondaryColor} stopOpacity="0.95" />
+          <stop offset="100%" stopColor={secondaryColor} stopOpacity="0.85" />
+        </radialGradient>
+      </defs>
       
-      {/* Orbital rings */}
+      {/* Technical orbital pattern - Mid-Century Modern */}
+      
+      {/* Orbital rings - refined */}
       {[55, 42, 28].map((radius, i) => {
         return (
           <circle
@@ -24,14 +42,14 @@ export default function ElectricFloralFive({ size = 200, className = "" }: Props
             cy="100"
             r={radius}
             fill="none"
-            stroke="#4a4a4a"
-            strokeWidth={i === 0 ? "4" : i === 1 ? "4.5" : "4"}
-            opacity={i === 0 ? 0.7 : i === 1 ? 0.8 : 0.6}
+            stroke={i === 1 ? secondaryColor : primaryColor}
+            strokeWidth={i === 0 ? "4.5" : i === 1 ? "5" : "4.5"}
+            opacity={i === 0 ? 0.75 : i === 1 ? 0.85 : 0.65}
           />
         );
       })}
       
-      {/* 12 atomic nodes on outer orbit */}
+      {/* 12 atomic nodes on outer orbit - refined */}
       {[...Array(12)].map((_, i) => {
         const angle = (i * 30 * Math.PI) / 180;
         const x = 100 + Math.cos(angle) * 55;
@@ -39,13 +57,14 @@ export default function ElectricFloralFive({ size = 200, className = "" }: Props
         
         return (
           <g key={i}>
-            <circle cx={x} cy={y} r="6" fill="#3a3a3a" opacity="0.85" />
-            <circle cx={x} cy={y} r="3" fill="#EDF2F7" />
+            <circle cx={x} cy={y} r="6.5" fill="url(#nodeGrad5)" />
+            <circle cx={x} cy={y} r="3.2" fill={highlightColor} />
+            <circle cx={x - 0.8} cy={y - 0.8} r="1" fill="#B89DBA" opacity="0.5" />
           </g>
         );
       })}
       
-      {/* 8 nodes on middle orbit */}
+      {/* 8 nodes on middle orbit - refined */}
       {[...Array(8)].map((_, i) => {
         const angle = (i * 45 * Math.PI) / 180;
         const x = 100 + Math.cos(angle) * 42;
@@ -53,17 +72,18 @@ export default function ElectricFloralFive({ size = 200, className = "" }: Props
         
         return (
           <g key={`mid-${i}`}>
-            <circle cx={x} cy={y} r="5" fill="#4a4a4a" opacity="0.8" />
-            <circle cx={x} cy={y} r="2" fill="#EDF2F7" />
+            <circle cx={x} cy={y} r="5.5" fill={accentColor} opacity="0.85" />
+            <circle cx={x} cy={y} r="2.2" fill={highlightColor} />
           </g>
         );
       })}
       
-      {/* Center nucleus */}
-      <circle cx="100" cy="100" r="20" fill="#2d2d2d" opacity="0.9" />
-      <circle cx="100" cy="100" r="14" fill="#EDF2F7" />
-      <circle cx="100" cy="100" r="9" fill="#707070" opacity="0.85" />
-      <circle cx="100" cy="100" r="4.5" fill="#000E10" />
+      {/* Center nucleus - refined */}
+      <circle cx="100" cy="100" r="21" fill="url(#nucleus5)" />
+      <circle cx="100" cy="100" r="15" fill={highlightColor} opacity="0.98" />
+      <circle cx="100" cy="100" r="9.5" fill={secondaryColor} opacity="0.9" />
+      <circle cx="100" cy="100" r="5" fill={accentColor} />
+      <circle cx="98.5" cy="98.5" r="2" fill="#E0BF9A" opacity="0.5" />
     </svg>
   );
 }

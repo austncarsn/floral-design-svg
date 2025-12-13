@@ -9,34 +9,58 @@ interface StemThirtySixProps {
 export default function StemThirtySix({ 
   size = 200,
   className = "",
-  stemColor = "#7A8450",
-  leafColor = "#9CAF88"
+  stemColor = "#8A9B7A",
+  leafColor = "#9DB5A0"
 }: StemThirtySixProps) {
+  const highlightColor = "#C4D9C5";
+  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Stem */}
-        <rect x="97" y="120" width="6" height="60" fill={stemColor} rx="1" />
+        <defs>
+          {/* Radial gradient for monstera leaf */}
+          <radialGradient id="monsteraGrad36" cx="50%" cy="45%">
+            <stop offset="0%" stopColor={highlightColor} stopOpacity="0.8" />
+            <stop offset="40%" stopColor={leafColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={leafColor} stopOpacity="0.9" />
+          </radialGradient>
+        </defs>
         
-        {/* Large monstera leaf base */}
-        <ellipse cx="100" cy="80" rx="65" ry="75" fill={leafColor} />
+        {/* Stem - refined */}
+        <rect x="96.5" y="120" width="7" height="63" fill={stemColor} rx="3.5" />
+        <rect x="97.5" y="120" width="2" height="63" fill={stemColor} opacity="0.6" />
         
-        {/* Cutouts to create monstera effect - symmetrical */}
+        {/* Large monstera leaf base - with gradient */}
+        <ellipse cx="100" cy="78" rx="67" ry="77" fill="url(#monsteraGrad36)" />
+        
+        {/* Cutouts to create monstera effect - refined symmetry */}
         {/* Center cutout */}
-        <ellipse cx="100" cy="70" rx="8" ry="25" fill="white" />
+        <ellipse cx="100" cy="68" rx="9" ry="26" fill="#F5F5F0" opacity="0.95" />
+        <ellipse cx="100" cy="68" rx="9" ry="26" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" />
         
-        {/* Left cutouts */}
-        <ellipse cx="70" cy="65" rx="6" ry="20" fill="white" transform="rotate(-15 70 65)" />
-        <ellipse cx="55" cy="85" rx="6" ry="18" fill="white" transform="rotate(-25 55 85)" />
-        <ellipse cx="48" cy="105" rx="5" ry="16" fill="white" transform="rotate(-35 48 105)" />
+        {/* Left cutouts - refined */}
+        <ellipse cx="68" cy="63" rx="7" ry="21" fill="#F5F5F0" opacity="0.95" transform="rotate(-16 68 63)" />
+        <ellipse cx="68" cy="63" rx="7" ry="21" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(-16 68 63)" />
         
-        {/* Right cutouts */}
-        <ellipse cx="130" cy="65" rx="6" ry="20" fill="white" transform="rotate(15 130 65)" />
-        <ellipse cx="145" cy="85" rx="6" ry="18" fill="white" transform="rotate(25 145 85)" />
-        <ellipse cx="152" cy="105" rx="5" ry="16" fill="white" transform="rotate(35 152 105)" />
+        <ellipse cx="53" cy="83" rx="7" ry="19" fill="#F5F5F0" opacity="0.95" transform="rotate(-26 53 83)" />
+        <ellipse cx="53" cy="83" rx="7" ry="19" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(-26 53 83)" />
         
-        {/* Leaf outline for definition */}
-        <ellipse cx="100" cy="80" rx="65" ry="75" fill="none" stroke={stemColor} strokeWidth="2" opacity="0.3" />
+        <ellipse cx="46" cy="103" rx="6" ry="17" fill="#F5F5F0" opacity="0.95" transform="rotate(-36 46 103)" />
+        <ellipse cx="46" cy="103" rx="6" ry="17" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(-36 46 103)" />
+        
+        {/* Right cutouts - mirror symmetry */}
+        <ellipse cx="132" cy="63" rx="7" ry="21" fill="#F5F5F0" opacity="0.95" transform="rotate(16 132 63)" />
+        <ellipse cx="132" cy="63" rx="7" ry="21" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(16 132 63)" />
+        
+        <ellipse cx="147" cy="83" rx="7" ry="19" fill="#F5F5F0" opacity="0.95" transform="rotate(26 147 83)" />
+        <ellipse cx="147" cy="83" rx="7" ry="19" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(26 147 83)" />
+        
+        <ellipse cx="154" cy="103" rx="6" ry="17" fill="#F5F5F0" opacity="0.95" transform="rotate(36 154 103)" />
+        <ellipse cx="154" cy="103" rx="6" ry="17" fill="none" stroke={leafColor} strokeWidth="1" opacity="0.3" transform="rotate(36 154 103)" />
+        
+        {/* Leaf outline for definition - refined */}
+        <ellipse cx="100" cy="78" rx="67" ry="77" fill="none" stroke={stemColor} strokeWidth="2" opacity="0.35" />
+        <ellipse cx="100" cy="78" rx="67" ry="77" fill="none" stroke={highlightColor} strokeWidth="1" opacity="0.2" />
       </svg>
     </div>
   );

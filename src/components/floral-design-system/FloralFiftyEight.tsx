@@ -18,7 +18,7 @@ export default function FloralFiftyEight({
         {[0, 60, 120, 180, 240, 300].map((angle, i) => {
           const rad1 = ((angle - 25) * Math.PI) / 180;
           const rad2 = ((angle + 25) * Math.PI) / 180;
-          const radius = 65;
+          const radius = 58;
           
           const x1 = centerX + Math.cos(rad1) * radius;
           const y1 = centerY + Math.sin(rad1) * radius;
@@ -29,17 +29,18 @@ export default function FloralFiftyEight({
           const largeArcFlag = 0;
           const pathD = `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
           
-          // Alternate colors
-          const colors = ["#C9858D", "#B8A9C9"];
+          // Refined alternating colors
+          const colors = ["#C9A5AE", "#C4ADB8"];
           
           return (
             <path key={i} d={pathD} fill={colors[i % 2]} />
           );
         })}
         
-        {/* Center circle */}
-        <circle cx={centerX} cy={centerY} r="30" fill="#FAF7F2" />
-        <circle cx={centerX} cy={centerY} r="12" fill="#E64A2E" />
+        {/* Center circles */}
+        <circle cx={centerX} cy={centerY} r="27" fill="#E8DCC8" />
+        <circle cx={centerX} cy={centerY} r="11" fill="#C97A64" />
+        <circle cx={centerX} cy={centerY} r="4" fill="#1A1A1A" />
       </svg>
     </div>
   );

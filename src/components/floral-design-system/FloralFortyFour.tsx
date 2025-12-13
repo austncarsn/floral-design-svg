@@ -1,4 +1,4 @@
-// Mint green scalloped flower (perfectly symmetrical 6-fold)
+// Sophisticated scalloped hexagon with mint petals and terracotta center
 interface FloralFortyFourProps {
   size?: number;
   className?: string;
@@ -12,21 +12,31 @@ export default function FloralFortyFour({
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Six scalloped petals - mint green (perfect 60° spacing) */}
-        <circle cx="100" cy="55" r="30" fill="#A8C9B8" />
-        <circle cx="143.3" cy="75" r="30" fill="#A8C9B8" />
-        <circle cx="143.3" cy="125" r="30" fill="#A8C9B8" />
-        <circle cx="100" cy="145" r="30" fill="#A8C9B8" />
-        <circle cx="56.7" cy="125" r="30" fill="#A8C9B8" />
-        <circle cx="56.7" cy="75" r="30" fill="#A8C9B8" />
+        <ellipse cx="100" cy="64" rx="25" ry="23" fill="#9DB5A0" />
+        <ellipse cx="131" cy="82" rx="23" ry="25" fill="#9DB5A0" />
+        <ellipse cx="131" cy="118" rx="25" ry="23" fill="#9DB5A0" />
+        <ellipse cx="100" cy="136" rx="23" ry="25" fill="#9DB5A0" />
+        <ellipse cx="69" cy="118" rx="25" ry="23" fill="#9DB5A0" />
+        <ellipse cx="69" cy="82" rx="23" ry="25" fill="#9DB5A0" />
         
-        {/* Center circle - terracotta */}
-        <circle cx="100" cy="100" r="40" fill="#C9604A" />
+        {/* Petal highlights */}
+        <circle cx="100" cy="64" r="12" fill="#C4D9CE" opacity="0.7" />
+        <circle cx="131" cy="82" r="12" fill="#C4D9CE" opacity="0.7" />
+        <circle cx="131" cy="118" r="12" fill="#C4D9CE" opacity="0.7" />
+        <circle cx="100" cy="136" r="12" fill="#C4D9CE" opacity="0.7" />
+        <circle cx="69" cy="118" r="12" fill="#C4D9CE" opacity="0.7" />
+        <circle cx="69" cy="82" r="12" fill="#C4D9CE" opacity="0.7" />
         
-        {/* Inner center - light beige */}
-        <circle cx="100" cy="100" r="20" fill="#E8DCC8" />
+        {/* Layered center - terracotta */}
+        <circle cx="100" cy="100" r="35" fill="#C97A64" />
+        <circle cx="100" cy="100" r="26" fill="#E8A594" opacity="0.6" />
         
-        {/* Center dot - black */}
+        {/* Inner center - cream */}
+        <circle cx="100" cy="100" r="19" fill="#E8DCC8" />
+        
+        {/* Center dot */}
         <circle cx="100" cy="100" r="8" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="3" fill="#9DB5A0" />
       </svg>
     </div>
   );

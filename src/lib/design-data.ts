@@ -189,13 +189,13 @@ export interface DesignItem {
 
 // October 2025 designs
 const october2025Designs: Omit<DesignItem, "edition">[] = [
-  { Component: FloralOne, name: "FloralOne", desc: "Coral red 6-petal daisy", colors: ["#E64A2E", "#1A1A1A"], category: "floral" },
-  { Component: FloralTwo, name: "FloralTwo", desc: "Teal blue 8-petal sunburst", colors: ["#4A7C8C", "#F5EFE0"], category: "floral" },
-  { Component: FloralThree, name: "FloralThree", desc: "Black & coral layered", colors: ["#1A1A1A", "#E64A2E", "#F5EFE0"], category: "floral" },
-  { Component: FloralFour, name: "FloralFour", desc: "Cream clover with diamond", colors: ["#F5EFE0", "#4A7C8C"], category: "floral" },
-  { Component: FloralFive, name: "FloralFive", desc: "Coral & black alternating", colors: ["#E64A2E", "#1A1A1A", "#F5EFE0"], category: "floral" },
-  { Component: FloralSix, name: "FloralSix", desc: "Teal pinwheel with dots", colors: ["#4A7C8C", "#F5EFE0"], category: "floral" },
-  { Component: FloralSeven, name: "FloralSeven", desc: "Coral layered blossom", colors: ["#E64A2E", "#F5EFE0", "#1A1A1A"], category: "floral" },
+  { Component: FloralOne, name: "FloralOne", desc: "Refined coral daisy - golden ratio", colors: ["#D4866F", "#C97A64", "#1A1A1A"], category: "floral" },
+  { Component: FloralTwo, name: "FloralTwo", desc: "Sophisticated teal sunburst - layered depth", colors: ["#5A8A8A", "#6B8A9B", "#E8DCC8"], category: "floral" },
+  { Component: FloralThree, name: "FloralThree", desc: "Pentagon perfection - 5-layer complexity", colors: ["#1A1A1A", "#D4866F", "#E8DCC8"], category: "floral" },
+  { Component: FloralFour, name: "FloralFour", desc: "Elegant four-leaf - cardinal harmony", colors: ["#F5EFE0", "#5A8A8A", "#6B8A9B"], category: "floral" },
+  { Component: FloralFive, name: "FloralFive", desc: "Ten-petal mandala - sophisticated rhythm", colors: ["#D4866F", "#1A1A1A", "#E8DCC8"], category: "floral" },
+  { Component: FloralSix, name: "FloralSix", desc: "Yin-yang blossom - balanced elegance", colors: ["#1A1A1A", "#D4866F", "#E8DCC8"], category: "floral" },
+  { Component: FloralSeven, name: "FloralSeven", desc: "Double mandala - pentagon & square", colors: ["#5A8A8A", "#F5EFE0", "#6B8A9B"], category: "floral" },
   { Component: FloralEight, name: "FloralEight", desc: "Teal starburst mandala", colors: ["#4A7C8C", "#F5EFE0", "#E64A2E"], category: "floral" },
   { Component: FloralNine, name: "FloralNine", desc: "Black frame with coral", colors: ["#1A1A1A", "#E64A2E", "#F5EFE0"], category: "floral" },
   { Component: FloralTen, name: "FloralTen", desc: "Coral diamond with teal", colors: ["#E64A2E", "#4A7C8C", "#F5EFE0"], category: "floral" },

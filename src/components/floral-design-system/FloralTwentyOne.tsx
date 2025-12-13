@@ -1,4 +1,4 @@
-// Sage green and mustard alternating petals (perfectly symmetrical)
+// Sophisticated modernist cross with lavender and cream quadrants
 interface FloralTwentyOneProps {
   size?: number;
   className?: string;
@@ -8,26 +8,28 @@ export default function FloralTwentyOne({
   size = 200,
   className = ""
 }: FloralTwentyOneProps) {
-  const centerX = 100;
-  const centerY = 100;
-  const radius = 42;
-  const colors = ["#9CAF88", "#D4A62A"];
-  
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* 6 alternating petals at 60-degree intervals */}
-        {[0, 60, 120, 180, 240, 300].map((angle, i) => {
-          const rad = (angle * Math.PI) / 180;
-          const cx = centerX + Math.cos(rad) * radius;
-          const cy = centerY + Math.sin(rad) * radius;
-          return (
-            <circle key={i} cx={cx} cy={cy} r="26" fill={colors[i % 2]} />
-          );
-        })}
+        {/* Base circle - lavender */}
+        <circle cx="100" cy="100" r="48" fill="#C4ADB8" />
         
-        {/* Center */}
+        {/* Alternating cream quadrants */}
+        <path d="M 100 52 A 48 48 0 0 1 148 100 L 100 100 Z" fill="#E8DCC8" />
+        <path d="M 100 148 A 48 48 0 0 1 52 100 L 100 100 Z" fill="#E8DCC8" />
+        
+        {/* Subtle highlights on cream quadrants */}
+        <path d="M 100 60 A 40 40 0 0 1 140 100 L 100 100 Z" fill="#F5EFE0" opacity="0.6" />
+        <path d="M 100 140 A 40 40 0 0 1 60 100 L 100 100 Z" fill="#F5EFE0" opacity="0.6" />
+        
+        {/* Subtle highlights on lavender quadrants */}
+        <path d="M 52 100 A 48 48 0 0 1 100 52 L 100 100 Z" fill="#D4C4E0" opacity="0.6" />
+        <path d="M 148 100 A 48 48 0 0 1 100 148 L 100 100 Z" fill="#D4C4E0" opacity="0.6" />
+        
+        {/* Layered center */}
         <circle cx="100" cy="100" r="20" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="13" fill="#E8DCC8" />
+        <circle cx="100" cy="100" r="6" fill="#C4ADB8" />
       </svg>
     </div>
   );

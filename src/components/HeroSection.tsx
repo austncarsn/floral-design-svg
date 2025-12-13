@@ -2,6 +2,8 @@ import { Download, Palette } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
 import type { CSSProperties } from "react";
 import { useRef } from "react";
+import Frame from "../imports/Frame1-145-220";
+import FallingPetals from "./FallingPetals";
 
 type SectionId = "gallery" | "palette";
 
@@ -106,9 +108,12 @@ export default function HeroSection({
       className="pt-[clamp(11rem,18vw,15rem)] pb-16 md:pb-24 lg:pb-32 relative overflow-hidden"
       style={{
         ...heroBackgroundStyle,
-        marginTop: '50px', // Account for scallop extension from nav
+        marginTop: '32px', // Account for larger scallop extension (32px)
       }}
     >
+      {/* Falling Petals Animation */}
+      <FallingPetals />
+      
       {/* Decorative Gradient Orbs - Parallax */}
       <motion.div
         className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl pointer-events-none"
@@ -128,33 +133,23 @@ export default function HeroSection({
       >
         <div className="mx-auto max-w-[800px] py-6 text-center">
           {/* Hero Title */}
-          <h1
+          <motion.div
             id="hero-title"
-            className="hero-title mt-6 mb-6"
-            style={titleStyle}
+            className="hero-title mt-6 mb-6 flex justify-center flex-col items-center"
+            initial={{ opacity: 0, y: 12, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{
+              duration: ANIMATION_DURATION,
+              ease: ANIMATION_EASING,
+            }}
           >
-            <motion.span
-              className="block"
-              initial="hidden"
-              animate="visible"
-              variants={titleLineVariants}
-            >
-              FLORAL DESIGN
-            </motion.span>
-            <motion.span
-              className="block"
-              initial="hidden"
-              animate="visible"
-              variants={titleLineVariants}
-              transition={{
-                duration: ANIMATION_DURATION,
-                ease: ANIMATION_EASING,
-                delay: TITLE_STAGGER_DELAY,
-              }}
-            >
-              SYSTEM
-            </motion.span>
-          </h1>
+            <div className="w-full max-w-[min(90vw,700px)]">
+              <Frame 
+                alt="FLORAL DESIGN SYSTEM" 
+                className="w-full h-auto"
+              />
+            </div>
+          </motion.div>
 
           {/* Subheading */}
           <motion.p

@@ -1,4 +1,4 @@
-// Burnt orange four-petal flower (perfectly symmetrical)
+// Sophisticated four-petal terracotta bloom with lavender center
 interface FloralThirtySevenProps {
   size?: number;
   className?: string;
@@ -11,17 +11,24 @@ export default function FloralThirtySeven({
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Four perfectly symmetrical petals - burnt orange */}
-        <ellipse cx="100" cy="55" rx="28" ry="45" fill="#D47647" />
-        <ellipse cx="145" cy="100" rx="45" ry="28" fill="#D47647" />
-        <ellipse cx="100" cy="145" rx="28" ry="45" fill="#D47647" />
-        <ellipse cx="55" cy="100" rx="45" ry="28" fill="#D47647" />
+        {/* Four terracotta petals - cardinal directions */}
+        <ellipse cx="100" cy="64" rx="24" ry="38" fill="#C97A64" />
+        <ellipse cx="136" cy="100" rx="38" ry="24" fill="#C97A64" />
+        <ellipse cx="100" cy="136" rx="24" ry="38" fill="#C97A64" />
+        <ellipse cx="64" cy="100" rx="38" ry="24" fill="#C97A64" />
         
-        {/* Center circle - lavender */}
-        <circle cx="100" cy="100" r="35" fill="#B8A9C9" />
+        {/* Petal highlights */}
+        <ellipse cx="100" cy="68" rx="15" ry="24" fill="#E8A594" opacity="0.6" />
+        <ellipse cx="132" cy="100" rx="24" ry="15" fill="#E8A594" opacity="0.6" />
+        <ellipse cx="100" cy="132" rx="15" ry="24" fill="#E8A594" opacity="0.6" />
+        <ellipse cx="68" cy="100" rx="24" ry="15" fill="#E8A594" opacity="0.6" />
         
-        {/* Inner center circle - charcoal */}
-        <circle cx="100" cy="100" r="18" fill="#2D2D2D" />
+        {/* Layered lavender center */}
+        <circle cx="100" cy="100" r="32" fill="#C4ADB8" />
+        <circle cx="100" cy="100" r="23" fill="#D4C4E0" opacity="0.6" />
+        <circle cx="100" cy="100" r="17" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="9" fill="#C4ADB8" />
+        <circle cx="100" cy="100" r="4" fill="#E8DCC8" />
       </svg>
     </div>
   );

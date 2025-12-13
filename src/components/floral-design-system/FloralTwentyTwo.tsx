@@ -1,4 +1,4 @@
-// Lavender double ring flower (perfectly symmetrical)
+// Sophisticated hexagonal star with sage and coral alternating points
 interface FloralTwentyTwoProps {
   size?: number;
   className?: string;
@@ -10,34 +10,48 @@ export default function FloralTwentyTwo({
 }: FloralTwentyTwoProps) {
   const centerX = 100;
   const centerY = 100;
-  const outerRadius = 45;
-  const innerRadius = 28;
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Outer ring - 8 small circles at 45-degree intervals */}
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => {
+        {/* 6 outer diamonds - alternating colors */}
+        {[0, 60, 120, 180, 240, 300].map((angle, i) => {
           const rad = (angle * Math.PI) / 180;
-          const cx = centerX + Math.cos(rad) * outerRadius;
-          const cy = centerY + Math.sin(rad) * outerRadius;
+          const distance = 36;
+          const cx = centerX + Math.cos(rad) * distance;
+          const cy = centerY + Math.sin(rad) * distance;
+          const isEven = i % 2 === 0;
+          
           return (
-            <circle key={`outer-${i}`} cx={cx} cy={cy} r="14" fill="#B8A9C9" />
+            <g key={i}>
+              {/* Main diamond */}
+              <rect
+                x={cx - 16}
+                y={cy - 16}
+                width="32"
+                height="32"
+                fill={isEven ? "#8A9B7A" : "#D4866F"}
+                transform={`rotate(45 ${cx} ${cy})`}
+              />
+              {/* Subtle highlight */}
+              <rect
+                x={cx - 10}
+                y={cy - 10}
+                width="20"
+                height="20"
+                fill={isEven ? "#9DB5A0" : "#E8A594"}
+                opacity="0.6"
+                transform={`rotate(45 ${cx} ${cy})`}
+              />
+            </g>
           );
         })}
         
-        {/* Inner ring - 4 larger circles at 90-degree intervals */}
-        {[0, 90, 180, 270].map((angle, i) => {
-          const rad = (angle * Math.PI) / 180;
-          const cx = centerX + Math.cos(rad) * innerRadius;
-          const cy = centerY + Math.sin(rad) * innerRadius;
-          return (
-            <circle key={`inner-${i}`} cx={cx} cy={cy} r="18" fill="#E8DCC8" />
-          );
-        })}
-        
-        {/* Center */}
-        <circle cx="100" cy="100" r="14" fill="#B8A9C9" />
+        {/* Layered center */}
+        <circle cx="100" cy="100" r="26" fill="#E8DCC8" />
+        <circle cx="100" cy="100" r="18" fill="#C9B8A8" />
+        <circle cx="100" cy="100" r="11" fill="#1A1A1A" />
+        <circle cx="100" cy="100" r="5" fill="#8A9B7A" />
       </svg>
     </div>
   );

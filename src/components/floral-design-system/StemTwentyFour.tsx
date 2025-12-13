@@ -8,42 +8,59 @@ export default function StemTwentyFour({
   size = 200, 
   className = "" 
 }: StemTwentyFourProps) {
-  const stemColor = "#7A8450";
-  const needleColor = "#9CAF88";
+  const stemColor = "#8A9B7A";
+  const needleColor = "#9DB5A0";
+  const needleHighlight = "#C4D9C5";
   
   return (
     <div className={className} style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Main stem */}
-        <rect x="97" y="70" width="6" height="110" fill={stemColor} rx="3" />
+        <defs>
+          {/* Gradient for needle depth */}
+          <linearGradient id="needleGrad24" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor={needleColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={needleColor} stopOpacity="0.75" />
+          </linearGradient>
+        </defs>
         
-        {/* Top cluster - radiating needles (perfectly symmetrical) */}
-        <line x1="100" y1="50" x2="80" y2="30" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="50" x2="90" y2="28" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="50" x2="100" y2="25" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="50" x2="110" y2="28" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="50" x2="120" y2="30" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
+        {/* Main stem - refined */}
+        <rect x="96.5" y="70" width="7" height="113" fill={stemColor} rx="3.5" />
+        <rect x="97.5" y="70" width="2" height="113" fill={stemColor} opacity="0.6" />
         
-        {/* Middle cluster */}
-        <line x1="100" y1="100" x2="75" y2="85" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="100" x2="85" y2="82" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="100" x2="95" y2="80" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="100" x2="105" y2="80" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="100" x2="115" y2="82" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="100" x2="125" y2="85" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
+        {/* Top cluster - radiating needles with refined strokes */}
+        <line x1="100" y1="48" x2="78" y2="28" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="48" x2="78" y2="28" stroke={needleHighlight} strokeWidth="1" strokeLinecap="round" opacity="0.4" transform="translate(-0.5, -0.5)" />
         
-        {/* Bottom cluster */}
-        <line x1="100" y1="150" x2="72" y2="138" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="150" x2="82" y2="135" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="150" x2="92" y2="132" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="150" x2="108" y2="132" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="150" x2="118" y2="135" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
-        <line x1="100" y1="150" x2="128" y2="138" stroke={needleColor} strokeWidth="3" strokeLinecap="round" />
+        <line x1="100" y1="48" x2="88" y2="26" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="48" x2="100" y2="23" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="48" x2="112" y2="26" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="48" x2="122" y2="28" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
         
-        {/* Cluster connection points */}
-        <circle cx="100" cy="50" r="6" fill={stemColor} />
-        <circle cx="100" cy="100" r="6" fill={stemColor} />
-        <circle cx="100" cy="150" r="6" fill={stemColor} />
+        {/* Middle cluster - refined symmetry */}
+        <line x1="100" y1="98" x2="73" y2="83" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="98" x2="83" y2="80" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="98" x2="93" y2="78" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="98" x2="107" y2="78" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="98" x2="117" y2="80" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="98" x2="127" y2="83" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        
+        {/* Bottom cluster - refined symmetry */}
+        <line x1="100" y1="148" x2="70" y2="136" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="148" x2="80" y2="133" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="148" x2="90" y2="130" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="148" x2="110" y2="130" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="148" x2="120" y2="133" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="100" y1="148" x2="130" y2="136" stroke="url(#needleGrad24)" strokeWidth="3.5" strokeLinecap="round" />
+        
+        {/* Cluster connection points - refined with gradient */}
+        <circle cx="100" cy="48" r="7" fill={stemColor} />
+        <circle cx="100" cy="48" r="4" fill={stemColor} opacity="0.6" />
+        
+        <circle cx="100" cy="98" r="7" fill={stemColor} />
+        <circle cx="100" cy="98" r="4" fill={stemColor} opacity="0.6" />
+        
+        <circle cx="100" cy="148" r="7" fill={stemColor} />
+        <circle cx="100" cy="148" r="4" fill={stemColor} opacity="0.6" />
       </svg>
     </div>
   );

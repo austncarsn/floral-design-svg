@@ -4,6 +4,12 @@ interface Props {
 }
 
 export default function ElectricFloralEight({ size = 200, className = "" }: Props) {
+  const primaryColor = "#9DB5A0"; // Sage green
+  const secondaryColor = "#C9765A"; // Dusty coral
+  const accentColor = "#7A9B9E"; // Muted teal
+  const tertiaryColor = "#D4A573"; // Warm mustard
+  const highlightColor = "#E8D5C4"; // Creamy neutral
+  
   return (
     <svg
       width={size}
@@ -13,9 +19,24 @@ export default function ElectricFloralEight({ size = 200, className = "" }: Prop
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Technical triangular atomic burst - Monochrome */}
+      <defs>
+        <linearGradient id="triangleGrad8" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stopColor={primaryColor} stopOpacity="0.95" />
+          <stop offset="100%" stopColor={secondaryColor} stopOpacity="0.8" />
+        </linearGradient>
+        <radialGradient id="hexGrad8" cx="50%" cy="50%">
+          <stop offset="0%" stopColor="#ADC5B0" stopOpacity="1" />
+          <stop offset="70%" stopColor={primaryColor} stopOpacity="0.95" />
+          <stop offset="100%" stopColor={primaryColor} stopOpacity="0.85" />
+        </radialGradient>
+      </defs>
       
-      {/* 6 elongated triangular petals */}
+      {/* Technical triangular atomic burst - Exquisite Mid-Century Modern */}
+      
+      {/* Outer glow layer */}
+      <circle cx="100" cy="100" r="78" fill={primaryColor} opacity="0.1" />
+      
+      {/* 6 elongated triangular petals with layers */}
       {[...Array(6)].map((_, i) => {
         const angle = (i * 60 * Math.PI) / 180;
         const innerRadius = 28;
@@ -34,28 +55,78 @@ export default function ElectricFloralEight({ size = 200, className = "" }: Prop
         
         return (
           <g key={i}>
-            {/* Main triangle */}
+            {/* Outer glow */}
+            <circle cx={tipX} cy={tipY} r="10" fill={primaryColor} opacity="0.2" />
+            
+            {/* Shadow layer */}
             <path
               d={`M ${tipX},${tipY} L ${base1X},${base1Y} L ${base2X},${base2Y} Z`}
-              fill="#5a5a5a"
-              opacity="0.8"
+              fill={primaryColor}
+              opacity="0.25"
+              transform={`translate(${Math.cos(angle) * 1}, ${Math.sin(angle) * 1})`}
             />
-            {/* Inner accent triangle */}
+            
+            {/* Main triangle with gradient */}
+            <path
+              d={`M ${tipX},${tipY} L ${base1X},${base1Y} L ${base2X},${base2Y} Z`}
+              fill="url(#triangleGrad8)"
+            />
+            
+            {/* Highlight edge */}
+            <line
+              x1={tipX}
+              y1={tipY}
+              x2={base1X}
+              y2={base1Y}
+              stroke={highlightColor}
+              strokeWidth="2"
+              opacity="0.6"
+            />
+            
+            {/* Inner accent triangle with layers */}
             <path
               d={`M ${100 + Math.cos(angle) * (outerRadius * 0.6)},${100 + Math.sin(angle) * (outerRadius * 0.6)} 
                   L ${100 + Math.cos(baseAngle1) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle1) * (innerRadius * 1.3)} 
                   L ${100 + Math.cos(baseAngle2) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle2) * (innerRadius * 1.3)} Z`}
-              fill="#EDF2F7"
-              opacity="0.7"
+              fill={accentColor}
+              opacity="0.6"
             />
-            {/* Tip ornament */}
-            <circle cx={tipX} cy={tipY} r="5" fill="#3a3a3a" opacity="0.9" />
-            <circle cx={tipX} cy={tipY} r="2.5" fill="#EDF2F7" />
+            <path
+              d={`M ${100 + Math.cos(angle) * (outerRadius * 0.6)},${100 + Math.sin(angle) * (outerRadius * 0.6)} 
+                  L ${100 + Math.cos(baseAngle1) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle1) * (innerRadius * 1.3)} 
+                  L ${100 + Math.cos(baseAngle2) * (innerRadius * 1.3)},${100 + Math.sin(baseAngle2) * (innerRadius * 1.3)} Z`}
+              fill={highlightColor}
+              opacity="0.5"
+            />
+            
+            {/* Mid-point decoration */}
+            <circle 
+              cx={100 + Math.cos(angle) * (outerRadius * 0.5)} 
+              cy={100 + Math.sin(angle) * (outerRadius * 0.5)} 
+              r="3.5" 
+              fill={tertiaryColor} 
+              opacity="0.85" 
+            />
+            <circle 
+              cx={100 + Math.cos(angle) * (outerRadius * 0.5)} 
+              cy={100 + Math.sin(angle) * (outerRadius * 0.5)} 
+              r="1.5" 
+              fill={highlightColor} 
+            />
+            
+            {/* Tip ornament with layers */}
+            <circle cx={tipX} cy={tipY} r="6.5" fill={secondaryColor} opacity="0.95" />
+            <circle cx={tipX} cy={tipY} r="3.5" fill={highlightColor} />
+            <circle cx={tipX} cy={tipY} r="1.8" fill={tertiaryColor} />
+            <circle cx={tipX - 0.8} cy={tipY - 0.8} r="0.8" fill="#E0BF9A" opacity="0.6" />
           </g>
         );
       })}
       
-      {/* Elegant hexagonal center */}
+      {/* Mid-layer decorative ring */}
+      <circle cx="100" cy="100" r="40" fill="none" stroke={accentColor} strokeWidth="2" opacity="0.35" />
+      
+      {/* Elegant hexagonal center with layers */}
       {(() => {
         const hexPoints = [...Array(6)].map((_, i) => {
           const angle = (i * 60 - 30) * Math.PI / 180;
@@ -68,14 +139,21 @@ export default function ElectricFloralEight({ size = 200, className = "" }: Prop
         
         return (
           <>
-            <path d={pathD} fill="#3a3a3a" opacity="0.9" />
-            <path d={pathD} fill="none" stroke="#2d2d2d" strokeWidth="4" opacity="0.6" />
+            <path d={pathD} fill="url(#hexGrad8)" />
+            <path d={pathD} fill="none" stroke={primaryColor} strokeWidth="4.5" opacity="0.7" />
+            <path d={pathD} fill="none" stroke={highlightColor} strokeWidth="1.5" opacity="0.5" />
           </>
         );
       })()}
       
-      <circle cx="100" cy="100" r="12" fill="#EDF2F7" />
-      <circle cx="100" cy="100" r="6" fill="#000E10" />
+      {/* Central core with layers */}
+      <circle cx="100" cy="100" r="15" fill={highlightColor} opacity="0.98" />
+      <circle cx="100" cy="100" r="14" fill={accentColor} opacity="0.25" />
+      <circle cx="100" cy="100" r="9" fill={secondaryColor} opacity="0.9" />
+      <circle cx="100" cy="100" r="8" fill={tertiaryColor} opacity="0.3" />
+      <circle cx="100" cy="100" r="5" fill={tertiaryColor} />
+      <circle cx="100" cy="100" r="2.5" fill={accentColor} />
+      <circle cx="98.5" cy="98.5" r="1.5" fill="#E0BF9A" opacity="0.6" />
     </svg>
   );
 }
