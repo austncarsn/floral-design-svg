@@ -16,7 +16,6 @@ export const AnimatedDaisy = ({
     palette = [COLORS.blue, COLORS.cyanMaterial, COLORS.deepSeaAmaranth, COLORS.freshPurple], 
     petalCount = 12, 
     speed = 1, 
-    scale = 0.85, // Reduced default scale to ensure containment
     style = 'radar',
   } = variant || {};
 
@@ -28,7 +27,7 @@ export const AnimatedDaisy = ({
   const isAssembly = style === 'assembly';
   
   const duration = 60 / (speed || 1);
-  const coreSize = "12%"; // Relative size for perfect scaling
+  const coreSize = "12%"; 
 
   const elements = useMemo(() => {
     // Symmetrical Count Logic
@@ -81,7 +80,8 @@ export const AnimatedDaisy = ({
         id: i,
         color,
         angle,
-        width: style === 'swiss' ? '35%' : '42%',
+        // Base width for scaling calculations
+        baseWidth: style === 'swiss' ? '35%' : '42%',
         height: style === 'swiss' ? '12%' : '8%',
         borderRadius: style === 'swiss' ? '2px' : '99px',
       };
@@ -90,20 +90,21 @@ export const AnimatedDaisy = ({
 
   return (
     <div 
-        className={clsx("relative flex items-center justify-center overflow-hidden w-full h-full", className)} 
+        className={clsx("relative flex items-center justify-center overflow-hidden w-full h-full transform-gpu", className)} 
         aria-hidden="true"
     >
       {/* Main Container - Scaled to prevent bleeding */}
       <motion.div 
         className={isGrid ? "grid grid-cols-2 gap-2 w-[80%] h-[80%]" : "relative w-[80%] h-[80%] flex items-center justify-center"}
         animate={shouldReduceMotion ? {} : { 
-             rotate: isGrid ? 0 : 360 // Grid stays static, others rotate
+             rotate: isGrid ? 0 : 360 
         }}
         transition={shouldReduceMotion ? {} : { 
             duration: isGrid ? 0 : duration, 
             repeat: Infinity, 
             ease: "linear" 
         }}
+        style={{ willChange: isGrid ? 'auto' : 'transform' }}
       >
         {isGrid ? (
             // GRID MODE: 4 Perfect Quadrants
@@ -112,9 +113,10 @@ export const AnimatedDaisy = ({
                     key={el.id}
                     className="w-full h-full backdrop-blur-md border border-white/20"
                     style={{ 
-                        backgroundColor: `${el.color}20`, // Transparent glass fill
+                        backgroundColor: `${el.color}20`,
                         borderRadius: el.borderRadius,
-                        boxShadow: `inset 0 0 20px ${el.color}40`
+                        boxShadow: `inset 0 0 20px ${el.color}40`,
+                        willChange: 'transform'
                     }}
                     animate={{ scale: [1, 0.95, 1] }}
                     transition={{
@@ -143,8 +145,8 @@ export const AnimatedDaisy = ({
                         width: el.size,
                         height: el.size,
                         borderRadius: '50%',
-                        // No background fill for cleaner "Constructed" look
-                        boxShadow: `0 0 15px ${el.color}20` 
+                        boxShadow: `0 0 15px ${el.color}20`,
+                        willChange: 'transform'
                     }}
                     animate={{ 
                         rotate: el.direction === 1 ? 360 : -360,
@@ -172,7 +174,8 @@ export const AnimatedDaisy = ({
                         width: '8%',
                         height: '8%',
                         backgroundColor: el.color,
-                        boxShadow: `0 0 10px ${el.color}`
+                        boxShadow: `0 0 10px ${el.color}`,
+                        willChange: 'transform, opacity'
                     }}
                     animate={{
                         x: [`${el.finalX * 2}%`, `${el.finalX}%`, `${el.finalX}%`, `${el.finalX * 2}%`],
@@ -190,25 +193,28 @@ export const AnimatedDaisy = ({
             ))
         ) : (
             // RADIAL/TURBINE MODE: Symmetrical Blades
+            // OPTIMIZATION: Use scaleX instead of animating width to prevent layout thrashing
             elements.map((el: any) => (
                 <div
                     key={el.id}
                     className="absolute top-1/2 left-1/2 origin-left flex items-center"
                     style={{
-                        width: '50%', // Reaches to edge of container (which is 80% of parent)
-                        height: 0, // Logic reset for flex centering
+                        width: '50%',
+                        height: 0,
                         transform: `rotate(${el.angle}deg) translateY(-50%)`,
                     }}
                 >
                     <motion.div 
-                        className="relative rounded-full backdrop-blur-sm border border-white/20 overflow-hidden"
+                        className="relative rounded-full backdrop-blur-sm border border-white/20 overflow-hidden origin-left"
                         style={{
-                            width: el.width, // Length of blade
-                            height: '12px', // Fixed thickness for consistency
-                            marginLeft: '20%', // Offset from center
+                            width: el.baseWidth, // Fixed width
+                            height: '12px',
+                            marginLeft: '20%',
                             backgroundColor: `${el.color}40`,
+                            willChange: 'transform'
                         }}
-                        animate={{ width: [el.width, '30%', el.width] }} // Breathing length
+                        // Animate scaleX instead of width for GPU acceleration
+                        animate={{ scaleX: [1, 0.8, 1] }} 
                         transition={{
                             duration: 3,
                             repeat: Infinity,
@@ -232,7 +238,7 @@ export const AnimatedDaisy = ({
         </div>
       </motion.div>
 
-      {/* BOUNDARY RING: Defines the limit visually */}
+      {/* BOUNDARY RING */}
       <div className="absolute inset-0 m-auto w-[90%] h-[90%] rounded-full border border-white/5 pointer-events-none" />
     </div>
   );
