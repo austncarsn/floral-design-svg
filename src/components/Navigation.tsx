@@ -1,9 +1,8 @@
 import { Menu, X } from "lucide-react";
 
 const NAV_ITEMS = [
-  { id: "gallery", label: "Gallery" },
-  { id: "vectors", label: "SVG Downloads" },
-  { id: "palette", label: "Colors" },
+  { id: "2026-florals", label: "2026 Florals" },
+  { id: "gallery", label: "2025 Archive" },
 ] as const;
 
 type SectionId = (typeof NAV_ITEMS)[number]["id"];
@@ -32,6 +31,10 @@ export default function Navigation({
   return (
     <nav
       className={`nav-bar ${isScrolled ? "scrolled" : ""}`}
+      style={{
+        backgroundColor: activeSection === "2026-florals" ? "rgba(255, 255, 255, 0.9)" : undefined,
+        borderBottom: activeSection === "2026-florals" ? "1px solid #f0f0f0" : undefined,
+      }}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -41,6 +44,7 @@ export default function Navigation({
           <div className="hidden items-center gap-8 md:flex">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
+              
               return (
                 <button
                   key={item.id}
@@ -49,13 +53,13 @@ export default function Navigation({
                   className={`relative transition-colors duration-200 ${ 
                     isActive
                       ? "text-[#1a1817]"
-                      : "text-[#5f5d5b] hover:text-[#1a1817]"
+                      : "text-[#9b9894] hover:text-[#1a1817]"
                   }`}
                   style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: 'var(--text-nav)',
-                    fontWeight: 400,
-                    letterSpacing: '0.05em',
+                    fontFamily: "var(--font-sans)",
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    letterSpacing: '0.02em',
                     minHeight: '44px',
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -64,12 +68,6 @@ export default function Navigation({
                   aria-current={isActive ? "page" : undefined}
                 >
                   {item.label}
-                  {isActive && (
-                    <span
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#1a1817]"
-                      aria-hidden="true"
-                    />
-                  )}
                 </button>
               );
             })}
@@ -115,9 +113,9 @@ export default function Navigation({
                       : "text-[#5f5d5b] hover:bg-[#fcc9de] hover:text-[#1a1817]"
                   }`}
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: "var(--font-sans)",
                     fontSize: '16px',
-                    fontWeight: 400,
+                    fontWeight: 600,
                     letterSpacing: '0.05em',
                   }}
                   aria-current={isActive ? "page" : undefined}
